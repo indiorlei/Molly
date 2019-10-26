@@ -5,7 +5,7 @@ services:
     container_name: molly_nginx
     image: nginx:1.13
     volumes:
-      - "./app:/var/www/html"
+      - "./www:/var/www/html"
       - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
     ports:
       - "80:80"
@@ -17,7 +17,7 @@ services:
     build:
       context: ./php
     volumes:
-      - "./app:/var/www/html"
+      - "./www:/var/www/html"
     ports:
       - "9000:9000"
     depends_on:
