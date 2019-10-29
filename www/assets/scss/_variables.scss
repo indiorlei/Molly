@@ -1,3 +1,10 @@
+/* Coolors Exported Palette - coolors.co/006e90-f18f01-adcad6-53dd6c-41bbd9 */
+$color1: rgba(0, 110, 144, 1);
+$color2: rgba(241, 143, 1, 1);
+$color3: rgba(173, 202, 214, 1);
+$color4: rgba(83, 221, 108, 1);
+$color5: rgba(65, 187, 217, 1);
+
 // Override Bootstrap default variables here
 // Do not edit any of the files in /vendor/bootstrap/scss/!
 
@@ -16,7 +23,7 @@ $gray-800: #5a5c69 !default;
 $gray-900: #3a3b45 !default;
 $black: #000 !default;
 
-$blue: #4e73df !default;
+$blue: $color1 !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;

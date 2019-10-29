@@ -1,4 +1,7 @@
-<?php include('template/header.php') ?>
+<?php
+session_start();
+include('template/header.php')
+?>
 
 <div class="bg-gradient-primary">
   <div class="container">
@@ -12,16 +15,27 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Login</h1>
                   </div>
-                  <form class="user">
+                  <form class="user" method="POST" action="testa-login.php">
+
+                    <?php if (isset($_SESSION['error_login'])) : ?>
+                      <div class="form-group">
+                        <div class="px-1 py-2 bg-gradient-danger text-white">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-exclamation-circle"></i>
+                          </span>
+                          <span class="text">Usuário e/ou senha inválidos</span>
+                        </div>
+                      </div>
+                    <?php endif;
+                    unset($_SESSION['error_login']); ?>
+
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="adminLoginEmail" name="adminLoginEmail" aria-describedby="emailHelp" placeholder="Usuário">
+                      <input type="text" class="form-control form-control-user" id="adminLoginUsuario" name="adminLoginUsuario" aria-describedby="emailHelp" placeholder="Usuário" autofocus="">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="adminLoginPassword" name="adminLoginPassword" placeholder="Senha">
+                      <input type="password" class="form-control form-control-user" id="adminLoginSenha" name="adminLoginSenha" placeholder="Senha">
                     </div>
-                    <a href="index.php" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </a>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                   </form>
                 </div>
               </div>

@@ -130,7 +130,8 @@
     text-decoration: none;
     font-size: 1rem;
     font-weight: 800;
-    padding: 1.5rem 1rem;
+    // padding: 1.5rem 1rem;
+    padding: .5rem 1rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
@@ -142,6 +143,14 @@
 
     .sidebar-brand-text {
       display: none;
+    }
+
+    svg {
+      width: 100%;
+      
+      // .st0 {
+      //   fill: #53dd6c
+      // }
     }
   }
 
