@@ -13,7 +13,7 @@ if (empty($usuario) || empty($senha)) {
 }
 
 $pdo = dbConnect();
-$statement = $pdo->prepare("select cod, usuario from admin_usuario where usuario = :usuario and senha = md5(:senha)");
+$statement = $pdo->prepare("select id, usuario from admin_usuario where usuario = :usuario and senha = md5(:senha)");
 $statement->execute(
     array(
         'usuario' => $usuario,

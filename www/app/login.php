@@ -37,7 +37,7 @@
                     <a class="small" href="forgot-password.php">Esqueceu a senha?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.php">Crie a sua conta aqui!</a>
+                    <a class="small" href="<?php echo URL ?>app/novo-usuario.php">Crie a sua conta aqui! </a>
                   </div>
                 </div>
               </div>

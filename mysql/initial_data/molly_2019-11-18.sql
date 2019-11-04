@@ -14,7 +14,6 @@ USE ``molly``;
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `admin_usuario`;
-
 CREATE TABLE `admin_usuario` (
   `cod` INT NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(200) NOT NULL,
@@ -27,10 +26,43 @@ LOCK TABLES `admin_usuario` WRITE;
 
 INSERT INTO `admin_usuario` (`cod`, `usuario`, `senha`)
 VALUES (1,'admin', md5('12345'));
--- senha 12345
 
 /*!40000 ALTER TABLE `admin_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+DROP TABLE IF EXISTS `bauletos`;
+CREATE TABLE `bauletos` (
+  `cod` INT NOT NULL AUTO_INCREMENT,
+  `modelo` VARCHAR(200) NULL,
+  `volume` INT NULL,
+  `altura` INT NULL,
+  `largura` INT NULL,
+  `profundidade` INT NULL,
+  PRIMARY KEY (`cod`));
+
+
+DROP TABLE IF EXISTS `motofretistas`;
+CREATE TABLE `motofretistas` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(200) NULL,
+  `cpf` VARCHAR(14) NULL,
+  `placa` VARCHAR(10) NULL,
+  `bauleto` INT NULL,
+  PRIMARY KEY (`id`));
+
+
+DROP TABLE IF EXISTS `clientes`;
+CREATE TABLE `clientes` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(200) NULL,
+  `cpf` VARCHAR(14) NULL,
+  `email` VARCHAR(200) NULL,
+  `endereco` VARCHAR(200) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC));
+
 
 
 
