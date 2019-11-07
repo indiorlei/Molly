@@ -30,7 +30,7 @@ if (count($usuario) <= 0) {
     exit();
 } else {
     $usuario = $usuario[0];
-    $_SESSION['usuario'] = $usuario['usuario'];
+    $_SESSION['admin_usuario'] = $usuario['usuario'];
     $_SESSION['adminIsLoggedIn'] = true;
     header('Location: index.php');
     exit();

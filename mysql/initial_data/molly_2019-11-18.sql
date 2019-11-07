@@ -53,15 +53,18 @@ CREATE TABLE `motofretistas` (
 
 
 DROP TABLE IF EXISTS `clientes`;
-CREATE TABLE `clientes` (
+CREATE TABLE `molly`.`clientes` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NULL,
-  `cpf` VARCHAR(14) NULL,
-  `email` VARCHAR(200) NULL,
+  `senha` VARCHAR(32) NOT NULL,
+  `email` VARCHAR(200) NOT NULL,
+  `cpf` VARCHAR(14) NOT NULL,
   `endereco` VARCHAR(200) NULL,
   PRIMARY KEY (`id`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC),
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC));
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC));
+
 
 
 

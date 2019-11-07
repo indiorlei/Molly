@@ -7,6 +7,6 @@ function isLoggedIn() {
 }
 
 if (!isLoggedIn()) {
-    header('Location: login.php');
+    header('Location: /admin/login.php');
     exit();
 }

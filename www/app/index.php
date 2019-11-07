@@ -1,6 +1,6 @@
 <?php
-// require('../config.php');
-// require('isLoggedIn.php');
+require('../config.php');
+require('isLoggedIn.php');
 
 include('template/header.php');
 ?>

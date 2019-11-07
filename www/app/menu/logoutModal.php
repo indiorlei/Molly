@@ -10,7 +10,7 @@
       <div class="modal-body">Selecione "Logout" abaixo se você estiver pronto para encerrar sua sessão atual.</div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-        <a class="btn btn-primary" href="<?php echo URL ?>admin/logout.php">Logout</a>
+        <a class="btn btn-primary" href="<?php echo URL ?>app/logout.php">Logout</a>
       </div>
     </div>
   </div>

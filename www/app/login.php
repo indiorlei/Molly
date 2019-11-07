@@ -1,4 +1,7 @@
-<?php include('template/header.php') ?>
+<?php
+session_start();
+include('template/header.php')
+?>
 
 <div class="bg-gradient-primary">
 
@@ -19,17 +22,30 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Login</h1>
                   </div>
-                  <form class="user">
+
+
+                  <form class="user" method="POST" action="testa-login.php">
+
+                    <?php if (isset($_SESSION['errorLogin'])) : ?>
+                      <div class="form-group">
+                        <div class="px-1 py-2 bg-gradient-danger text-white">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-exclamation-circle"></i>
+                          </span>
+                          <span class="text">Usuário e/ou senha inválidos</span>
+                        </div>
+                      </div>
+                    <?php endif;
+                    unset($_SESSION['errorLogin']); ?>
+
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="email" class="form-control form-control-user" id="usuarioEmail" name="usuarioEmail" placeholder="Insira o endereço de e-mail...">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" id="usuarioSenha" name="usuarioSenha" placeholder="Senha">
                     </div>
 
-                    <a href="index.php" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </a>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
 
                   </form>
                   <hr>
