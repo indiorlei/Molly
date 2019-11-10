@@ -56,6 +56,7 @@ DROP TABLE IF EXISTS `clientes`;
 CREATE TABLE `molly`.`clientes` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NULL,
+  `sobrenome` VARCHAR(200) NULL,
   `senha` VARCHAR(32) NOT NULL,
   `email` VARCHAR(200) NOT NULL,
   `cpf` VARCHAR(14) NOT NULL,
@@ -65,7 +66,10 @@ CREATE TABLE `molly`.`clientes` (
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC));
 
-
+  CREATE TABLE `molly`.`status` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(200) NULL,
+  PRIMARY KEY (`id`));
 
 
 

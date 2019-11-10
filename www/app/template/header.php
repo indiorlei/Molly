@@ -21,4 +21,4 @@
 
 </head>
 
-<body>
+<body id="app">

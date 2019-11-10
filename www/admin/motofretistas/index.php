@@ -63,7 +63,7 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'upd
                 <?php $bauletos = $pdo->query('select id, modelo from bauletos;'); ?>
                 <label for="bauleto">Bauleto</label>
                 <?php if ($bauletos->rowCount() <= 0) : ?>
-                <h6 class="m-0">Nenhum Bauleto cadastrado</h6>
+                  <h6 class="m-0">Nenhum Bauleto cadastrado</h6>
                 <?php else : ?>
                   <select class="form-control" id="bauleto" name="bauleto">
                     <option>Selecione</option>
@@ -75,7 +75,10 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'upd
                   </select>
                 <?php endif; ?>
               </div>
-              <button type="submit" class="btn btn-primary btn-save btn-block">Salvar</button>
+              <div class="form-buttons d-flex justify-content-end align-items-center">
+                <a class="btn btn-cancel text-danger" href="<?php echo URL; ?>admin/motofretistas/listar.php">Cancelar</a>
+                <button type="submit" class="btn btn-primary btn-save ">Salvar</button>
+              </div>
             </form>
           </div>
         </div>

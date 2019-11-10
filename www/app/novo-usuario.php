@@ -60,17 +60,28 @@ include('template/header.php');
                 unset($_SESSION['error_senha']); ?>
 
                 <div class="form-group">
-                  <label for="">Nome</label>
-                  <input type="text" class="form-control" id="nome" name="nome" placeholder="" value="<?php echo $_SESSION['nome'] ? $_SESSION['nome'] : ''; ?>">
+                  <div class="row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <label for="">Nome</label>
+                      <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex: José Augusto" value="<?php echo $_SESSION['nome'] ? $_SESSION['nome'] : ''; ?>">
+                    </div>
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <label for="">Sobrenome</label>
+                      <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Ex: da Silva" value="<?php echo $_SESSION['sobrenome'] ? $_SESSION['sobrenome'] : ''; ?>">
+                    </div>
+                  </div>
                 </div>
+
                 <div class="form-group">
                   <label for="">CPF</label>
-                  <input type="text" class="form-control" id="cpf" name="cpf" placeholder="" value="<?php echo $_SESSION['cpf'] ? $_SESSION['cpf'] : ''; ?>">
+                  <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Ex: 000.000.000-00" value="<?php echo $_SESSION['cpf'] ? $_SESSION['cpf'] : ''; ?>">
                 </div>
+
                 <div class="form-group">
                   <label for="">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="" value="<?php echo $_SESSION['email'] ? $_SESSION['email'] : ''; ?>">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Este será seu login" value="<?php echo $_SESSION['email'] ? $_SESSION['email'] : ''; ?>">
                 </div>
+
                 <div class="form-group">
                   <div class="form-group">
                     <label for="">Senha</label>
@@ -84,6 +95,12 @@ include('template/header.php');
                     </div>
                   </div>
                 </div>
+
+                <div class="form-group">
+                  <label for="">Endereço</label>
+                  <input type="endereco" class="form-control" id="endereco" name="endereco" placeholder="Ex: Av. Paulista, 900" value="<?php echo $_SESSION['endereco'] ? $_SESSION['endereco'] : ''; ?>">
+                </div>
+
                 <button type="submit" class="btn btn-primary btn-user btn-block">Criar Conta</button>
 
                 <!-- <hr> -->

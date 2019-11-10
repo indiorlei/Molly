@@ -63,7 +63,10 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'upd
               <div class="form-group">
                 <input type="text" class="form-control form-control-profundidade" id="profundidade" name="profundidade" placeholder="Profundidade (cm)" value="<?php echo (isset($profundidade) && $profundidade != null || $profundidade != "") ? $profundidade : ''; ?>">
               </div>
-              <button type="submit" class="btn btn-primary btn-save btn-block">Salvar</button>
+              <div class="form-buttons d-flex justify-content-end align-items-center">
+                <a class="btn btn-cancel text-danger" href="<?php echo URL; ?>admin/bauletos/listar.php">Cancelar</a>
+                <button type="submit" class="btn btn-primary btn-save ">Salvar</button>
+              </div>
             </form>
           </div>
         </div>

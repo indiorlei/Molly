@@ -31,7 +31,8 @@ if (count($cliente) <= 0) {
 } else {
     $cliente = $cliente[0];
     $_SESSION['clienteNome'] = $cliente['nome'];
+    $_SESSION['clienteID'] = $cliente['id'];
     $_SESSION['clienteIsLoggedIn'] = true;
-    header('Location: index.php');
+    header('Location: /app/novo-pedido');
     exit();
 }

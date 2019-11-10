@@ -1,6 +1,58 @@
+$(function() {
+
+  // if (document.cookie.match(/^(.*;)?\s*adminToggled\s*=\s*[^;]+(.*)?$/)  ) {
+  //   console.log('tem o cookie no admin');
+  //   $("body").toggleClass("sidebar-toggled");
+  //   $(".sidebar").toggleClass("toggled");
+  //   if ($(".sidebar").hasClass("toggled")) {
+  //     $('.sidebar .collapse').collapse('hide');
+  //   }
+  // }
+
+  // if (document.cookie.match(/^(.*;)?\s*appToggled\s*=\s*[^;]+(.*)?$/)  ) {
+  //   console.log('tem o cookie no app');
+  //   $("body").toggleClass("sidebar-toggled");
+  //   $(".sidebar").toggleClass("toggled");
+  //   if ($(".sidebar").hasClass("toggled")) {
+  //     $('.sidebar .collapse').collapse('hide');
+  //   }
+  // }
+  
+});
+
 (function($) {
   "use strict"; // Start of use strict
 
+  function setCookie(name, value) {
+    var cookie = name + "=" + escape(value);
+    document.cookie = cookie;
+  }
+
+  function getCookie(name) {
+    var cookies = document.cookie;
+    var prefix = name + "=";
+    var begin = cookies.indexOf("; " + prefix);
+    if (begin == -1) {
+      begin = cookies.indexOf(prefix);
+      if (begin != 0) {
+        return null;
+      }
+    } else {
+      begin += 2;
+    }
+    var end = cookies.indexOf(";", begin);
+    if (end == -1) {
+      end = cookies.length;
+    }
+    return unescape(cookies.substring(begin + prefix.length, end));
+  }
+
+  function deleteCookie(name) {
+    if (getCookie(name)) {
+      document.cookie = name + "=" + "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+    }
+  }
+  
   // Toggle the side navigation
   $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
     $("body").toggleClass("sidebar-toggled");
@@ -9,6 +61,24 @@
       $('.sidebar .collapse').collapse('hide');
     };
   });
+
+  // // Toggle the side navigation APP
+  // $("#app #sidebarToggle, #app #sidebarToggleTop").on('click', function(e) {
+  //   if ($("#app .sidebar").hasClass("toggled")) {
+  //     setCookie('appToggled', '1');
+  //   } else {
+  //     deleteCookie('appToggled');
+  //   };
+  // });
+
+  // // Toggle the side navigation ADMIN
+  // $("#admin #sidebarToggle, #admin #sidebarToggleTop").on('click', function(e) {
+  //   if ($("#admin .sidebar").hasClass("toggled")) {
+  //     setCookie('adminToggled', '1');
+  //   } else {
+  //     deleteCookie('adminToggled');
+  //   };
+  // });
 
   // Close any open menu accordions when window is resized below 768px
   $(window).resize(function() {

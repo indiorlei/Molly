@@ -26,8 +26,8 @@ $motofretistas = $pdo->query('select * from motofretistas;');
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th></th>
-                      <th></th>
+                      <th width="30px"></th>
+                      <th width="30px"></th>
                       <th>Nome</th>
                       <th>CPF</th>
                       <th>Placa</th>

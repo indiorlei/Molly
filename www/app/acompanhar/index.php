@@ -12,7 +12,7 @@ include('../template/header.php');
       <?php include_once('../menu/topbar.php') ?>
 
       <div class="container-fluid">
-        <h1 class="h1 mb-4 text-gray-800">Motofretista</h1>
+        <h1 class="h1 mb-4 text-gray-800">Acompanhar</h1>
 
       </div>
 
