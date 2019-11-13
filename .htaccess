@@ -1,0 +1,8 @@
+RewriteEngine on
+<IfModule mod_rewrite.c>
+ Options +FollowSymlinks
+
+ # Define site2019/ como caminho padrão do servidor
+ # RewriteRule ^(?!.*\b(pub)\b|.*\b(blog)\b|.*\b(emkt)\b).*$ kurotel/ [NC,L]
+ RewriteRule ^./$ www/ [NC,L]
+</IfModule>
