@@ -19,6 +19,10 @@
     }
 }
 
+.form-error {
+    border-color: $red !important;
+}
+
 .form-control-placa {
     text-transform: uppercase;
 }

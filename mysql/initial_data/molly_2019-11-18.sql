@@ -10,21 +10,18 @@ CREATE DATABASE ``molly``;
 -- CREATE SCHEMA `molly` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
 USE ``molly``;
 
-# Dump of table admin_usuario
-# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `admin_usuario`;
 CREATE TABLE `admin_usuario` (
-  `cod` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(200) NOT NULL,
   `senha` VARCHAR(32) NOT NULL,
-  PRIMARY KEY (`cod`));
-
+  PRIMARY KEY (`id`));
 
 LOCK TABLES `admin_usuario` WRITE;
 /*!40000 ALTER TABLE `admin_usuario` DISABLE KEYS */;
 
-INSERT INTO `admin_usuario` (`cod`, `usuario`, `senha`)
+INSERT INTO `admin_usuario` (`id`, `usuario`, `senha`)
 VALUES (1,'admin', md5('12345'));
 
 /*!40000 ALTER TABLE `admin_usuario` ENABLE KEYS */;
@@ -33,13 +30,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `bauletos`;
 CREATE TABLE `bauletos` (
-  `cod` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `modelo` VARCHAR(200) NULL,
   `volume` INT NULL,
   `altura` INT NULL,
   `largura` INT NULL,
   `profundidade` INT NULL,
-  PRIMARY KEY (`cod`));
+  PRIMARY KEY (`id`));
 
 
 DROP TABLE IF EXISTS `motofretistas`;
@@ -53,7 +50,7 @@ CREATE TABLE `motofretistas` (
 
 
 DROP TABLE IF EXISTS `clientes`;
-CREATE TABLE `molly`.`clientes` (
+CREATE TABLE `clientes` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NULL,
   `sobrenome` VARCHAR(200) NULL,
@@ -66,11 +63,31 @@ CREATE TABLE `molly`.`clientes` (
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC));
 
-  CREATE TABLE `molly`.`status` (
+
+DROP TABLE IF EXISTS `status`;
+CREATE TABLE `status` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NULL,
   PRIMARY KEY (`id`));
 
+INSERT INTO `status` (`id`, `nome`)
+VALUES (1,'Aguardando motofretista');
+
+
+DROP TABLE IF EXISTS `pedidos`;
+CREATE TABLE `pedidos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `status` INT NULL,
+  `id_cliente` INT NOT NULL,
+  `id_motofretista` INT NULL,
+  `tamanhoBauleto` INT NULL,
+  `enderecoRetirada` VARCHAR(200) NULL,
+  `enderecoDestino` VARCHAR(200) NULL,
+  `tipoEntrega` INT NOT NULL DEFAULT 0 COMMENT '0 = Documento;\n1 = Pacote;',
+  `obs` VARCHAR(1000) NULL,
+  `dataCriacao` DATETIME NULL,
+  `dataModificacao` DATETIME NULL
+  PRIMARY KEY (`id`));
 
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
