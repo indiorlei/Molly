@@ -18,10 +18,16 @@
   </div>
 
   <li class="nav-item">
-    <a class="nav-link" href="<?php echo URL ?>admin/pedidos">
-      <i class="fas fa-fw fa-clipboard-list"></i>
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePedidos" aria-expanded="true" aria-controls="collapsePedidos">
+    <i class="fas fa-fw fa-clipboard-list"></i>
       <span>Pedidos</span>
     </a>
+    <div id="collapsePedidos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <a class="collapse-item" href="<?php echo URL ?>admin/pedidos">Pedidos</a>
+        <a class="collapse-item" href="<?php echo URL ?>admin/pedidos">Histórico de Pedidos</a>
+      </div>
+    </div>
   </li>
 
   <li class="nav-item">
@@ -46,7 +52,6 @@
     </a>
     <div id="collapseMotofretista" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <!-- <h6 class="collapse-header">Custom Components:</h6> -->
         <a class="collapse-item" href="<?php echo URL ?>admin/motofretistas/">Adicionar</a>
         <a class="collapse-item" href="<?php echo URL ?>admin/motofretistas/listar.php">Listar</a>
       </div>
@@ -60,7 +65,6 @@
     </a>
     <div id="collapseBauleto" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <!-- <h6 class="collapse-header">Custom Components:</h6> -->
         <a class="collapse-item" href="<?php echo URL ?>admin/bauletos/">Adicionar</a>
         <a class="collapse-item" href="<?php echo URL ?>admin/bauletos/listar.php">Listar</a>
       </div>
@@ -74,7 +78,6 @@
     </a>
     <div id="collapseStatus" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <!-- <h6 class="collapse-header">Custom Components:</h6> -->
         <a class="collapse-item" href="<?php echo URL ?>admin/status/">Adicionar</a>
         <a class="collapse-item" href="<?php echo URL ?>admin/status/listar.php">Listar</a>
       </div>

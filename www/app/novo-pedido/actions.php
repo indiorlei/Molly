@@ -16,6 +16,9 @@ if ($radioRetirar == 0) {
   $tamanho = isset($_POST['tamanho']) ? $_POST['tamanho'] : '';
 }
 
+// criar código de rastreio
+$codRastreio = 'ML-' . date('Y') . '-' . bin2hex(random_bytes(4)) . '-' . date('n') . date('d');
+
 try {
   $statement = $pdo->prepare(
     'insert into pedidos ( 
@@ -27,7 +30,8 @@ try {
       tipoEntrega,
       tamanhoBauleto,
       dataCriacao,
-      dataModificacao
+      dataModificacao,
+      codRastreio
     ) values (
       :id_cliente,
       :enderecoRetirada,
@@ -37,21 +41,21 @@ try {
       :tipoEntrega,
       :tamanhoBauleto,
       CURRENT_TIMESTAMP(),
-      CURRENT_TIMESTAMP()
+      CURRENT_TIMESTAMP(),
+      :codRastreio
     )'
   );
 
-  $statement->execute(
-    array(
-      ':id_cliente' => $id_cliente,
-      ':enderecoRetirada' => $enderecoRetirada,
-      ':enderecoDestino' => $enderecoDestino,
-      ':obs' => $obs,
-      ':status' => 1,
-      ':tipoEntrega' => $radioRetirar,
-      ':tamanhoBauleto' => $tamanho
-    )
-  );
+  $statement->execute(array(
+    ':id_cliente' => $id_cliente,
+    ':enderecoRetirada' => $enderecoRetirada,
+    ':enderecoDestino' => $enderecoDestino,
+    ':obs' => $obs,
+    ':status' => 1,
+    ':tipoEntrega' => $radioRetirar,
+    ':tamanhoBauleto' => $tamanho,
+    ':codRastreio' => $codRastreio
+  ));
 
   header('Location: /app/acompanhar');
   exit();

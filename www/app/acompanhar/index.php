@@ -5,7 +5,7 @@ require('../isLoggedIn.php');
 include('../template/header.php');
 
 $pdo = dbConnect();
-$pedidos = $pdo->prepare('select * from pedidos where id_cliente = :id_cliente order by dataModificacao DESC;');
+$pedidos = $pdo->prepare('select * from pedidos p inner join status s on s.id = p.status where p.id_cliente = :id_cliente and s.tipo = 1 order by datamodificacao desc;');
 $pedidos->execute(array(':id_cliente' => $_SESSION['clienteID']));
 ?>
 
@@ -22,13 +22,14 @@ $pedidos->execute(array(':id_cliente' => $_SESSION['clienteID']));
           </div>
           <div class="card-body">
             <?php if ($pedidos->rowCount() <= 0) : ?>
-              <h6 class="m-0 text-primary">Nenhum Pedido</h6>
+              <h6 class="m-0 text-primary">Nenhum Pedido Aberto</h6>
             <?php else : ?>
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>Status</th>
+                      <th>Cod. Rastreio</th>
                       <th>Endereço Retirada</th>
                       <th>Endereço Destino</th>
                       <th>Nome Motofretista</th>
@@ -48,6 +49,7 @@ $pedidos->execute(array(':id_cliente' => $_SESSION['clienteID']));
                               echo $status->nome;
                               ?>
                         </td>
+                        <td><?php echo $elem->codRastreio ?></td>
                         <td><?php echo $elem->enderecoRetirada ?></td>
                         <td><?php echo $elem->enderecoDestino ?></td>
                         <?php

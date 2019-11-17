@@ -19,15 +19,17 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'del
 } else {
   $ID = isset($_POST['id']) ? $_POST['id'] : '';
   $nome = isset($_POST['status']) ? $_POST['status'] : '';
+  $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : '';
 }
 
 if ($ID) {
   // UPDATE
   try {
-    $statement = $pdo->prepare('update status set nome = :nome where id = :id');
+    $statement = $pdo->prepare('update status set nome = :nome, tipo = :tipo where id = :id');
     $statement->execute(array(
       ':id' => $ID,
       ':nome' => $nome,
+      ':tipo' => $tipo,
     ));
     header('Location: /admin/status/listar.php');
     exit();
@@ -37,9 +39,10 @@ if ($ID) {
 } else {
   // INSERT
   try {
-    $statement = $pdo->prepare('insert into status (nome) values (:nome)');
+    $statement = $pdo->prepare('insert into status (nome, tipo) values (:nome, :tipo)');
     $statement->execute(array(
       ':nome' => $nome,
+      ':tipo' => $tipo,
     ));
     header('Location: /admin/status/listar.php');
     exit();

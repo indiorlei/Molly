@@ -28,6 +28,7 @@ $status = $pdo->query('select * from status;');
                       <th width="30px"></th>
                       <th width="30px"></th>
                       <th>Status</th>
+                      <th>Tipo</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -44,9 +45,25 @@ $status = $pdo->query('select * from status;');
                           </a>
                         </td>
                         <td><?php echo $elem->nome ?></td>
+                        <td>
+                          <?php
+                              $tipo = '';
+                              switch ($elem->tipo) {
+                                case '0':
+                                  $tipo = 'Fechado';
+                                  break;
+                                case '1':
+                                  $tipo = 'Aberto';
+                                  break;
+                                default:
+                                  $tipo = '';
+                                  break;
+                              }
+                              echo $tipo;
+                              ?>
                       </tr>
 
-                      <?php // MODAL PARA EXCLUIR  ?>
+                      <?php // MODAL PARA EXCLUIR ?>
                       <div class="modal fade" id="deleteModal_<?php echo $elem->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">

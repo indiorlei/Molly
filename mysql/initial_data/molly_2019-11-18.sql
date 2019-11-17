@@ -68,16 +68,26 @@ DROP TABLE IF EXISTS `status`;
 CREATE TABLE `status` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NULL,
+  `tipo` INT NULL DEFAULT 0 COMMENT '0 = Fechado;\n1 = Aberto;',
   PRIMARY KEY (`id`));
 
-INSERT INTO `status` (`id`, `nome`)
-VALUES (1,'Aguardando motofretista');
+INSERT INTO `status`
+    (`id`, `nome`, `tipo`)
+VALUES
+    (1,'Solicitando Motofretista', 1),
+    (2,'Cancelado', 0),
+    (3,'Não há Motofretista disponível', 0),
+    (4,'Motofretista em trânsito', 1),
+    (5,'Coleta realizada', 1),
+    (6,'Entrega concluída', 0),
+    (7,'Endereço não encontrado', 0);
 
 
 DROP TABLE IF EXISTS `pedidos`;
 CREATE TABLE `pedidos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `status` INT NULL,
+  `codRastreio` VARCHAR(45) NULL,
   `id_cliente` INT NOT NULL,
   `id_motofretista` INT NULL,
   `tamanhoBauleto` INT NULL,
@@ -86,8 +96,9 @@ CREATE TABLE `pedidos` (
   `tipoEntrega` INT NOT NULL DEFAULT 0 COMMENT '0 = Documento;\n1 = Pacote;',
   `obs` VARCHAR(1000) NULL,
   `dataCriacao` DATETIME NULL,
-  `dataModificacao` DATETIME NULL
-  PRIMARY KEY (`id`));
+  `dataModificacao` DATETIME NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `codRastreio_UNIQUE` (`codRastreio` ASC));
 
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

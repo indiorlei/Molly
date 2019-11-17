@@ -3,263 +3,109 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/assets/images/favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-  <title>Molly – Moto Delivery</title>
+    <title>Molly – Moto Delivery</title>
 
-  <!-- Custom fonts -->
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/site/css/bootstrap.min.css">
 
-  <!-- Custom styles -->
-  <link href="assets/css/template.min.css" rel="stylesheet">
-
+    <!-- style CSS -->
+    <link rel="stylesheet" href="assets/site/css/style.css">
 </head>
 
 <body>
-  <div id="wrapper">
-    <div id="content-wrapper" class="d-flex flex-column">
-      <div id="content">
-        
-      <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="/">
+                            <!-- LOGO SVG -->
+                            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410.52 474.1">
+                                <path class="cls-1" d="M49.48 459.21H45.1l-.1-40.07-14.14 40.12h-4.77l-14.25-40 .09 40.07H7.55l-.12-52.49h4.38l16.61 46 16.55-46h4.38zM90.96 435.44v9.89a15.27 15.27 0 01-3.57 10.42q-3.58 4.13-10.86 4.14t-11-4.13a15 15 0 01-3.74-10.36v-9.89q0-7.11 3.77-10.91t10.75-3.8c4.64 0 8.24 1.29 10.8 3.9s3.84 6.2 3.85 10.74zm-4.36 10.65v-10.64q0-10.86-10.12-10.84-10.32 0-10.3 10.89v10.64a9.87 9.87 0 002.79 7.26 10.28 10.28 0 007.6 2.75c3.2 0 5.68-.93 7.42-2.75a10.13 10.13 0 002.61-7.31zM106.58 456.84l-1.25 3.23a11.23 11.23 0 01-6.34-3.81 11.43 11.43 0 01-2-7l-.11-42.55h4.38v14.91h9.39l-1.87 4h-7.51l.06 23.67c.08 3.9 1.8 6.45 5.25 7.55zM147.83 435.3v9.89a15.27 15.27 0 01-3.57 10.42q-3.6 4.13-10.87 4.15t-11-4.13a15 15 0 01-3.68-10.37v-9.89q0-7.11 3.77-10.9t10.74-3.81q7 0 10.81 3.9t3.8 10.74zm-4.36 10.65v-10.64q0-10.86-10.12-10.83-10.32 0-10.3 10.88V446a9.77 9.77 0 002.79 7.26 10.27 10.27 0 007.59 2.75c3.21 0 5.69-.92 7.43-2.75a10.11 10.11 0 002.61-7.31zM194.58 458.84h-16.27l-.12-52.51h14.7q8.83 0 13.51 4.61t4.68 12.35l.05 20.52q.03 15.03-16.55 15.03zm12.13-14.24l-.05-22c0-4.2-1.32-7.31-3.94-9.36a14.3 14.3 0 00-9.08-3.05h-11.1l.1 44.94h10.64q13.49-.04 13.43-10.53zM233.06 455.99a25.22 25.22 0 0011.42-3.09l1.72 3.21a24.55 24.55 0 01-12.58 3.55q-13.62 0-13.64-10.9v-15.35q0-6.07 3.93-9.45t10.44-3.4q6.48 0 10.13 3.31t3.66 9.24v9.74l-23.78 1.33v4.57a6.27 6.27 0 003.07 5.84 10.62 10.62 0 005.63 1.4zm10.65-16.87v-6.52a7.73 7.73 0 00-1.81-5.28 8.06 8.06 0 00-3.76-2.61 13.93 13.93 0 00-3.91-.55 11.11 11.11 0 00-7.12 2.26q-2.81 2.26-2.8 7.05v6.59zM261.71 458.7h-4.38l-.13-52.43h4.38zM279.17 407.98a2.31 2.31 0 01-.77 1.76 2.58 2.58 0 01-3.68 0 2.46 2.46 0 01-.79-1.76 2.34 2.34 0 01.78-1.73 2.62 2.62 0 011.88-.75 2.53 2.53 0 011.84.74 2.44 2.44 0 01.74 1.74zm-.34 50.67h-4.38l-.09-37.53h4.35zM303.39 458.6h-6l-12.06-37.5h4.61l10.49 33.16 10.4-33.21h4.61zM330.29 455.76a25.25 25.25 0 0011.42-3.1l1.72 3.22a24.55 24.55 0 01-12.58 3.55q-13.62 0-13.64-10.9v-15.36q0-6.06 3.93-9.45t10.44-3.39q6.48 0 10.13 3.31c2.44 2.21 3.65 5.29 3.66 9.24v9.73l-23.78 1.34v4.56a6.26 6.26 0 003.07 5.84 10.63 10.63 0 005.63 1.41zm10.68-16.92v-6.52a7.72 7.72 0 00-1.81-5.27 8.06 8.06 0 00-3.76-2.61 14 14 0 00-3.91-.56 11.12 11.12 0 00-7.12 2.27q-2.81 2.25-2.8 7v6.6zM371.52 424.72a25 25 0 00-6-.73 11.59 11.59 0 00-5.51 1.32 4.1 4.1 0 00-2.45 3.79l.07 29.36h-4.38l-.09-37.53h4.38l-.23 2.62c2.44-2.15 5.68-3.23 9.69-3.24a29.57 29.57 0 015.71.58zM397.14 474.1l-1.18-3.26q5.24-1.89 5.22-7.8v-8.39q-2.88 4.57-10.31 4.59-14.86 0-14.9-14l-.06-24.35h4.22l.06 25.1q0 4.78 2.76 7.14a11 11 0 007.48 2.34 12.08 12.08 0 007.7-2.34c2-1.55 3-3.95 3-7.19v-14.76c0-3.64.25-6.07.77-7.27a7.72 7.72 0 014.92-3.75L408 423q-2.65 1.13-2.65 5.25l.09 34.68a12.25 12.25 0 01-1.86 7.19q-1.98 2.62-6.44 3.98zM63.01 372.6a16.73 16.73 0 01-4.93 2.22 23.44 23.44 0 01-6.5.83 21.18 21.18 0 01-7.66-1.14 4.66 4.66 0 01-3.21-3.95q-1.29-11.21-2.18-18.15t-1.09-12.16h-.67q-2 7.51-3.56 13.69t-2.87 12q-1.34 5.9-2.83 11.9t-3.47 13.24a28.43 28.43 0 01-4.76 1.08 36.82 36.82 0 01-5.68.45c-3.9 0-6.81-.6-8.72-1.78s-2.53-3.36-1.85-6.5l17.91-64.94a17.32 17.32 0 015.43-3.55 24.67 24.67 0 0110.52-1.91q7 0 10.59 2.1a9.4 9.4 0 014.37 6.82c.36 2 .72 4.37 1.08 7s.7 5.35 1 8.15.63 5.58.92 8.34.54 5.24.78 7.45h.66q5.51-10.7 10.87-20.69t9.55-16.79a26.75 26.75 0 015.5-1.72 34.55 34.55 0 017.13-.7q6.51 0 10.24 1.85t3.64 5.28q0 2.55-.56 7.84t-1.32 11.9q-.77 6.63-1.7 14t-1.81 14.2q-.88 6.81-1.71 12.48t-1.41 8.73a22.56 22.56 0 01-5.12 1.85 30.64 30.64 0 01-6.45.57 17.34 17.34 0 01-8.15-1.66q-3.1-1.65-2.32-6.49 2.22-13.87 4.41-25t3.43-18.59h-.67q-2.4 5-6.56 12.48T63.01 372.6zM112.9 352.84a52.87 52.87 0 017.07-17.57 49.38 49.38 0 0111.68-12.8 50 50 0 0115-7.83 54.88 54.88 0 0117.14-2.68 44.78 44.78 0 0116 2.68 29 29 0 0111.66 7.83 27.18 27.18 0 016.21 12.8q1.61 7.64-.55 17.57a54.12 54.12 0 01-7 17.63 48.38 48.38 0 01-11.63 12.87 50.23 50.23 0 01-15.06 7.83 56.13 56.13 0 01-17.37 2.67 44.72 44.72 0 01-16.17-2.74 26.83 26.83 0 01-17.56-20.82 42.73 42.73 0 01.58-17.44zm23.94 0q-2.5 11.58 1.17 17.32t11.93 5.73a20.66 20.66 0 0014.54-5.73q6.15-5.73 8.67-17.32t-1.14-17.19q-3.62-5.73-12-5.73a20.83 20.83 0 00-14.46 5.66q-6.2 5.69-8.71 17.26zM214.28 391.95c-3.81 0-6.6-1.06-8.35-3.18s-2.24-5-1.45-8.66l14.23-65.83c1-.17 2.62-.41 4.81-.71a47.45 47.45 0 016.21-.44 27.91 27.91 0 015.29.44 7.74 7.74 0 013.58 1.6 5.17 5.17 0 011.71 3.18 14.83 14.83 0 01-.36 5.35L229.06 374h30.45a13.17 13.17 0 01.91 3.75 14.43 14.43 0 01-.26 4.91c-.73 3.39-2 5.79-3.82 7.19a10.22 10.22 0 01-6.44 2.1zM282.5 391.95c-3.81 0-6.6-1.06-8.35-3.18s-2.24-5-1.45-8.66l14.25-65.83c1-.17 2.62-.41 4.81-.71a47.45 47.45 0 016.21-.44 27.91 27.91 0 015.29.44 7.74 7.74 0 013.58 1.6 5.17 5.17 0 011.71 3.18 14.83 14.83 0 01-.36 5.35L297.3 374h30.41a13.17 13.17 0 01.91 3.75 14.43 14.43 0 01-.26 4.91c-.73 3.39-2 5.79-3.82 7.19a10.22 10.22 0 01-6.44 2.1zM371.93 391.06a42.77 42.77 0 01-4.69.76 49.1 49.1 0 01-6.06.39q-6.12 0-8.75-2c-1.76-1.31-2.17-4.09-1.26-8.34l3.73-17.19q-2.31-4.71-4.92-10.44t-5-11.72q-2.43-6-4.36-11.78a85.62 85.62 0 01-2.91-10.61 24.44 24.44 0 015.63-4.2 15.73 15.73 0 017.8-1.91c3.46 0 6.12.68 8 2s3.39 3.9 4.53 7.64l6.43 21.26h.8q2.71-3.94 4.82-7.19c1.4-2.17 2.78-4.33 4.13-6.5s2.77-4.41 4.26-6.74 3.17-5 5.07-8.09a28.43 28.43 0 015.71-1.78 27.82 27.82 0 015.72-.64 11 11 0 017.4 2.36q2.7 2.4 1.7 7.1a15.6 15.6 0 01-1.46 3.7 54.34 54.34 0 01-4.48 6.55q-3.35 4.39-9.56 11.91t-16.68 19.61zM39.45 143.16a3.81 3.81 0 00-3.79-3.8H3.79a3.8 3.8 0 000 7.59h31.92a3.81 3.81 0 003.74-3.79z" />
+                                <path class="cls-1" d="M410.51 227.66a49.52 49.52 0 00-49.53-49.53c-1.17 0-2.32.05-3.47.13l-25.29-54.79a14.29 14.29 0 00-2.73-3.94 8.07 8.07 0 00-7.09-4.27h-1.87a14.33 14.33 0 00-2.62 0h-13.7l-1.24-9.53a11.2 11.2 0 00-11.14-11.18h-32.77c6.84-10.01 12.65-17.71 14.65-18.43h.58a38.2 38.2 0 0036.87-28.77h11a31 31 0 00-11.15-19.29A38.18 38.18 0 00274.33 0a38 38 0 00-24.66 67c-49.1.9-76.45 22-84.41 29.28a11.2 11.2 0 00-5.23 9.45v.81a11.19 11.19 0 0011.14 11.18h11.23a225.42 225.42 0 00-24.23 38.32h-13.73a7.87 7.87 0 00.83-2.29l13.84-79.91c.72-4.14-2.32-7.56-6.75-7.58l-75.76-.5c-4.43 0-8.64 3.34-9.36 7.49L53.4 153.17a6.64 6.64 0 00.12 2.89h-21.6a5 5 0 00-5 5v.55a5 5 0 005 5h264.69c-35-28.21-69.95-21.44-69.95-21.44s7.75-12.73 17-27.27l15.5.06a8 8 0 00-2 5.3 8.12 8.12 0 008.1 8.1h39.85a14.28 14.28 0 001.17 4l16.17 35-6.23 6.23h-55.2a3.4 3.4 0 000 6.79h50.69a2.8 2.8 0 012.13 2.7v.35a2.79 2.79 0 01-.93 2.07h-93.9a4.76 4.76 0 100 9.52h75.73l-.29.29h.36a3.21 3.21 0 013.2 3.2v.36a3.21 3.21 0 01-3.2 3.2h-2.65a4.51 4.51 0 00-1.05-.12h-99.02a4.76 4.76 0 100 9.52h93.74a4.67 4.67 0 011.86 3.71v.05a4.69 4.69 0 01-4.68 4.68l-111.77-1a5.41 5.41 0 00-5.39 5.4v1.53a5.41 5.41 0 005.39 5.39h97.8a5.32 5.32 0 001.75-.31 3.17 3.17 0 012.28 3v.38a3.18 3.18 0 01-1.54 2.71H157.16a51.48 51.48 0 01-2.47 9.29 58.68 58.68 0 01-3.42 7.62h43.25l-.24.24H295c-3.68 20.06 8.79 35.73 30.47 36.32 24.28.64 50.89-17.86 59.46-41.33 2.94-8 3.37-15.62 1.7-22.14h23.76c.04-.76.12-1.55.12-2.35zm-54.39 23.75c-2.94 8.08-12.11 14.46-20.49 14.24s-12.75-7-9.81-15.06 12.14-14.46 20.51-14.24 12.76 6.96 9.79 15.06z" />
+                                <path class="cls-1" d="M361.93 162.89a13.34 13.34 0 002.38-.25v-30a13.34 13.34 0 00-2.38-.25 14.33 14.33 0 00-14.29 14.29v1.91a14.33 14.33 0 0014.29 14.3zM201.19 198.13a4.66 4.66 0 004.64-4.64 4.66 4.66 0 00-4.64-4.65h-34.65a4.66 4.66 0 00-4.65 4.65 4.66 4.66 0 004.65 4.64zM239.05 181.34a2.86 2.86 0 100-5.71h-14.64a2.86 2.86 0 100 5.71zM32.34 121.93h14.65a2.86 2.86 0 100-5.72H32.34a2.86 2.86 0 000 5.72zM62.82 230.32a2.86 2.86 0 00-2.86-2.86H45.32a2.86 2.86 0 100 5.71h14.64a2.86 2.86 0 002.86-2.85zM172.02 70.45h32.76a3.55 3.55 0 100-7.1h-32.76a3.55 3.55 0 000 7.1zM146.53 197.42a3.58 3.58 0 100-7.15H115.1a3.58 3.58 0 000 7.15zM70.71 216.91a3.59 3.59 0 00-3.57-3.57H35.71a3.57 3.57 0 100 7.14h31.43a3.58 3.58 0 003.57-3.57zM119.47 205.46c-24.28-.66-50.91 17.84-59.46 41.31s4.17 43 28.44 43.68 50.91-17.84 59.46-41.31-4.2-43.03-28.44-43.68zm-2.52 43.7c-3 8.1-12.12 14.46-20.49 14.24s-12.76-7-9.8-15.06 12.12-14.46 20.49-14.24 12.76 6.96 9.8 15.06z" />
+                            </svg>
+                            <!-- LOGO SVG -->
+                        </a>
+                    </nav>
+                </div>
             </div>
-          </form>
-
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
-
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-
-          </ul>
-
-        </nav>
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-          <!-- Page Heading -->
-          <h1 class="h1 mb-4 text-gray-800">Blank Page</h1>
-          <h2 class="h2 mb-4 text-gray-800">Blank Page</h2>
-          <h3 class="h3 mb-4 text-gray-800">Blank Page</h2>
-          <h4 class="h4 mb-4 text-gray-800">Blank Page</h2>
-          <h5 class="h5 mb-4 text-gray-800">Blank Page</h2>
-
         </div>
-        <!-- /.container-fluid -->
+    </header>
 
-      </div>
-      <!-- End of Main Content -->
+    <section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h1>Moto Delivery</h1>
+                            <h2>Serviço de gerenciamento de motofretistas</h2>
+                            <!-- <p>Serviço de gerenciamento de motofretistas</p> -->
+                            <a href="/app" class="btn_2 banner_btn_1">Acessar</a>
+                            <a href="app/novo-usuario.php" class="btn_2 banner_btn_2">Cadastre-se grátis </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="banner_img d-none d-lg-block">
+                        <img src="assets/site/img/banner_img.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <?php include('copyright.php') ?>
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="assets/js/template.min.js"></script>
-
+    <section class="about_us section_padding">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-6 col-lg-5">
+                    <div class="about_us_text">
+                        <h2>Buscar pelo código de rastreio</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim
+                        </p>
+                        <!-- <a href="#" class="btn_2">sing up free</a> -->
+                        <input class="input" type="text" placeholder="Digite o Código de rastreio">
+                        <a href="#" class="btn_1">Buscar</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="learning_img">
+                        <img src="assets/site/img/about_img.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="assets/site/img/left_sharp.png" alt="" class="left_shape_1">
+        <img src="assets/site/img/about_shape.png" alt="" class="about_shape_1">
+    </section>
 </body>
 
 </html>

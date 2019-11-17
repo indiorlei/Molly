@@ -5,7 +5,8 @@ require('../isLoggedIn.php');
 include('../template/header.php');
 
 $pdo = dbConnect();
-$motofretistas = $pdo->query('select * from motofretistas;');
+$pedidos = $pdo->prepare('select * from pedidos p inner join status s on s.id = p.status where p.id_cliente = :id_cliente and s.tipo = 0 order by datamodificacao desc;');
+$pedidos->execute(array(':id_cliente' => $_SESSION['clienteID']));
 ?>
 
 <div id="wrapper">
@@ -13,44 +14,76 @@ $motofretistas = $pdo->query('select * from motofretistas;');
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
       <?php include_once('../menu/topbar.php') ?>
+
       <div class="container-fluid">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Motofretistas</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Histórico</h6>
           </div>
           <div class="card-body">
-            <?php if ($motofretistas->rowCount() <= 0) : ?>
-              <h6 class="m-0 text-primary">Nenhum Motofretista cadastrado</h6>
+            <?php if ($pedidos->rowCount() <= 0) : ?>
+              <h6 class="m-0 text-primary">Nenhum Pedido</h6>
             <?php else : ?>
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      
-                      <th>Nome</th>
-                      <th>CPF</th>
-                      <th>Placa</th>
-                      <th>Bauleto</th>
+                      <th>Status</th>
+                      <th>Cod. Rastreio</th>
+                      <th>Endereço Retirada</th>
+                      <th>Endereço Destino</th>
+                      <th>Nome Motofretista</th>
+                      <th>Placa moto</th>
+                      <th>Tipo de Entrega</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php while ($elem = $motofretistas->fetch(PDO::FETCH_OBJ)) { ?>
+                    <?php while ($elem = $pedidos->fetch(PDO::FETCH_OBJ)) { ?>
                       <tr>
-                        <td><?php echo $elem->nome ?></td>
-                        <td><?php echo $elem->cpf ?></td>
-                        <td><?php echo $elem->placa ?></td>
                         <td>
                           <?php
-                              $bauleto = $pdo->prepare("select modelo from bauletos where id = :id;");
-                              $bauleto->execute(array(':id' => $elem->bauleto));
-                              $bauleto = $bauleto->fetchAll(PDO::FETCH_OBJ);
-                              $bauleto = $bauleto[0];
+                              $status = $pdo->prepare("select nome from status where id = :id;");
+                              $status->execute(array(':id' => $elem->status));
+                              $status = $status->fetchAll(PDO::FETCH_OBJ);
+                              $status = $status[0];
+                              echo $status->nome;
                               ?>
-                          <?php echo $bauleto->modelo; ?>
+                        </td>
+                        <td><?php echo $elem->codRastreio ?></td>
+                        <td><?php echo $elem->enderecoRetirada ?></td>
+                        <td><?php echo $elem->enderecoDestino ?></td>
+                        <?php
+                            $motofretista = (object) [];
+                            if ($elem->id_motofretista) {
+                              $motofretista = $pdo->prepare("select nome, placa from motofretistas where id = :id;");
+                              $motofretista->execute(array(':id' => $elem->id_motofretista));
+                              $motofretista = $motofretista->fetchAll(PDO::FETCH_OBJ);
+                              $motofretista = $motofretista[0];
+                            } else {
+                              $motofretista->nome = $status->nome;
+                              $motofretista->placa = $status->nome;
+                            }
+                            ?>
+                        <td><?php echo $motofretista->nome ?></td>
+                        <td><?php echo $motofretista->placa ?></td>
+                        <td>
+                          <?php
+                              $tipoEntrega = '';
+                              switch ($elem->tipoEntrega) {
+                                case '0':
+                                  $tipoEntrega = 'Retirar Documento';
+                                  break;
+                                case '1':
+                                  $tipoEntrega = 'Retirar Pacote';
+                                  break;
+                                default:
+                                  $tipoEntrega = '';
+                                  break;
+                              }
+                              echo $tipoEntrega;
+                              ?>
                         </td>
                       </tr>
-                      
-
                     <?php } ?>
                   </tbody>
                 </table>
@@ -59,6 +92,7 @@ $motofretistas = $pdo->query('select * from motofretistas;');
           </div>
         </div>
       </div>
+
     </div>
     <?php include('../../copyright.php') ?>
   </div>
