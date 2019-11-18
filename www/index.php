@@ -87,13 +87,11 @@
                 <div class="col-md-6 col-lg-5">
                     <div class="about_us_text">
                         <h2>Buscar pelo código de rastreio</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim
-                        </p>
-                        <!-- <a href="#" class="btn_2">sing up free</a> -->
-                        <input class="input" type="text" placeholder="Digite o Código de rastreio">
-                        <a href="#" class="btn_1">Buscar</a>
+                        <p>Digite o código de rastreio para acompanhar o seu pedido.</p>
+                        <form action="">
+                            <input class="input" type="text" placeholder="Digite o Código de rastreio">
+                            <button type="submit" class="btn_1">Buscar</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6">
@@ -107,5 +105,9 @@
         <img src="assets/site/img/about_shape.png" alt="" class="about_shape_1">
     </section>
 </body>
+
+<script>
+    console.log('scriptzando...');
+</script>
 
 </html>

@@ -76,11 +76,11 @@ INSERT INTO `status`
 VALUES
     (1,'Solicitando Motofretista', 1),
     (2,'Cancelado', 0),
-    (3,'Não há Motofretista disponível', 0),
+    (3,'Não há Motofretista disponível', 1),
     (4,'Motofretista em trânsito', 1),
     (5,'Coleta realizada', 1),
     (6,'Entrega concluída', 0),
-    (7,'Endereço não encontrado', 0);
+    (7,'Endereço não encontrado', 1);
 
 
 DROP TABLE IF EXISTS `pedidos`;
