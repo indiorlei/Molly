@@ -220,7 +220,7 @@ button:focus,
   font-weight: 500;
   color: #1a1a1a;
   border: 1px solid #8f9091;
-  min-width: 250px;
+  width: 250px;
 }
 
 .btn_2:hover {
