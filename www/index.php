@@ -67,7 +67,7 @@
                             <h1>Moto Delivery</h1>
                             <h2>Serviço de gerenciamento de motofretistas</h2>
                             <!-- <p>Serviço de gerenciamento de motofretistas</p> -->
-                            <a href="/app" class="btn_2 banner_btn_1">Acessar</a>
+                            <a href="app" class="btn_2 banner_btn_1">Acessar</a>
                             <a href="app/novo-usuario.php" class="btn_2 banner_btn_2">Cadastre-se grátis </a>
                         </div>
                     </div>
