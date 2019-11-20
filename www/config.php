@@ -2,12 +2,20 @@
 session_start();
 
 // constantes com dados de acesso ao MySQL
-define('DB_HOST', 'mysql');
+// define('DB_HOST', 'mysql');
+// // define('USUARIO', $_ENV['MYSQL_USER']); // usuario configurado no Docker
+// define('DB_USER', 'root');
+// // define('SENHA', $_ENV['MYSQL_PASS'); // senha configurada no Docker
+// define('DB_PASS', '123.456');
+// define('DB_NAME', 'molly');
+
+
+define('DB_HOST', 'lolyz0ok3stvj6f0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	');
 // define('USUARIO', $_ENV['MYSQL_USER']); // usuario configurado no Docker
-define('DB_USER', 'root');
+define('DB_USER', 'v60er1qb6pnw3naj');
 // define('SENHA', $_ENV['MYSQL_PASS'); // senha configurada no Docker
-define('DB_PASS', '123.456');
-define('DB_NAME', 'molly');
+define('DB_PASS', 't012buheow0r9ado');
+define('DB_NAME', 'uf8dsukgfxv7p7b9');
 
 // habilita todas as exibições de erros
 ini_set('display_errors', true);
