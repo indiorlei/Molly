@@ -33,43 +33,43 @@ function browserSyncReload(done) {
 
 // Clean vendor
 function clean() {
-  return del(["./www/assets/vendor/"]);
+  return del(["./assets/vendor/"]);
 }
 
 // Bring third party dependencies from node_modules into vendor directory
 function modules() {
   // Bootstrap JS
   var bootstrapJS = gulp.src('./node_modules/bootstrap/dist/js/*')
-    .pipe(gulp.dest('./www/assets/vendor/bootstrap/js'));
+    .pipe(gulp.dest('./assets/vendor/bootstrap/js'));
   // Bootstrap SCSS
   var bootstrapSCSS = gulp.src('./node_modules/bootstrap/scss/**/*')
-    .pipe(gulp.dest('./www/assets/vendor/bootstrap/scss'));
+    .pipe(gulp.dest('./assets/vendor/bootstrap/scss'));
   // dataTables
   var dataTables = gulp.src([
       './node_modules/datatables.net/js/*.js',
       './node_modules/datatables.net-bs4/js/*.js',
       './node_modules/datatables.net-bs4/css/*.css'
     ])
-    .pipe(gulp.dest('./www/assets/vendor/datatables'));
+    .pipe(gulp.dest('./assets/vendor/datatables'));
   // Font Awesome
   var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
-    .pipe(gulp.dest('./www/assets/vendor'));
+    .pipe(gulp.dest('./assets/vendor'));
   // jQuery Easing
   var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
-    .pipe(gulp.dest('./www/assets/vendor/jquery-easing'));
+    .pipe(gulp.dest('./assets/vendor/jquery-easing'));
   // jQuery
   var jquery = gulp.src([
       './node_modules/jquery/dist/*',
       '!./node_modules/jquery/dist/core.js'
     ])
-    .pipe(gulp.dest('./www/assets/vendor/jquery'));
+    .pipe(gulp.dest('./assets/vendor/jquery'));
   return merge(bootstrapJS, bootstrapSCSS, dataTables, fontAwesome, jquery, jqueryEasing);
 }
 
 // CSS task
 function css() {
   return gulp
-    .src("./www/assets/scss/**/*.scss")
+    .src("./assets/scss/**/*.scss")
     .pipe(plumber())
     .pipe(sass({
       outputStyle: "expanded",
@@ -79,12 +79,12 @@ function css() {
     .pipe(autoprefixer({
       cascade: false
     }))
-    .pipe(gulp.dest("./www/assets/css"))
+    .pipe(gulp.dest("./assets/css"))
     .pipe(rename({
       suffix: ".min"
     }))
     .pipe(cleanCSS())
-    .pipe(gulp.dest("./www/assets/css"))
+    .pipe(gulp.dest("./assets/css"))
     .pipe(browsersync.stream());
 }
 
@@ -92,21 +92,21 @@ function css() {
 function js() {
   return gulp
     .src([
-      './www/assets/js/*.js',
-      '!./www/assets/js/*.min.js',
+      './assets/js/*.js',
+      '!./assets/js/*.min.js',
     ])
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./www/assets/js'))
+    .pipe(gulp.dest('./assets/js'))
     .pipe(browsersync.stream());
 }
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./www/assets/scss/**/*", css);
-  gulp.watch(["./www/assets/js/**/*", "!./www/assets/js/**/*.min.js"], js);
+  gulp.watch("./assets/scss/**/*", css);
+  gulp.watch(["./assets/js/**/*", "!./assets/js/**/*.min.js"], js);
   gulp.watch("./**/*.php", browserSyncReload);
 }
 

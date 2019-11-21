@@ -2,22 +2,22 @@ version: "3"
 services:
 
   nginx:
-    container_name: molly_nginx
+    container_name: molly_2_nginx
     image: nginx:1.13
     volumes:
-      - "./www:/var/www/html"
-      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+      - "./:/var/www/html"
+      - "./config/nginx/nginx.conf:/etc/nginx/nginx.conf"
     ports:
       - "80:80"
     depends_on:
       - php
 
   php:
-    container_name: molly_php
+    container_name: molly_2_php
     build:
-      context: ./php
+      context: ./config/php
     volumes:
-      - "./www:/var/www/html"
+      - "./:/var/www/html"
     ports:
       - "9000:9000"
     depends_on:
@@ -27,23 +27,15 @@ services:
       - MYSQL_PASS=123.456
   
   mysql:
-    container_name: molly_mysql
+    container_name: molly_2_mysql
     image: mysql:5.7.20
     volumes:
       - "db_data:/var/lib/mysql"
-      - "./mysql/initial_data:/docker-entrypoint-initdb.d"
+      - "./config/mysql/initial_data:/docker-entrypoint-initdb.d"
     ports:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=123.456
-
-  phpmyadmin:
-    container_name: molly_phpmyadmin
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - "8580:80"
-    links:
-      - mysql
 
 volumes:
   db_data:

@@ -1,4 +1,5 @@
-<?php define('URL', 'https://appmolly.herokuapp.com/www'); ?>
+<?php // define('URL', 'https://appmolly.herokuapp.com/www'); ?>
+<?php define('URL', 'http://localhost/'); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
