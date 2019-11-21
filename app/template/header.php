@@ -1,10 +1,4 @@
-<?php
-if ($_SERVER[HTTP_HOST] == 'localhost') {
-  define('URL', 'https://appmolly.herokuapp.com/');
-} else {
-  define('URL', 'http://localhost/');
-}
-?>
+<?php define('URL', "http://$_SERVER[HTTP_HOST]/"); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
