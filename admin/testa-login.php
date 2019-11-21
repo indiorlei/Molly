@@ -16,8 +16,8 @@ $pdo = dbConnect();
 $statement = $pdo->prepare("select id, usuario from admin_usuario where usuario = :usuario and senha = md5(:senha)");
 $statement->execute(
     array(
-        'usuario' => $usuario,
-        'senha' => $senha
+        ':usuario' => $usuario,
+        ':senha' => $senha
     )
 );
 
