@@ -8,7 +8,7 @@ session_start();
 // define('DB_NAME', 'molly');
 
 
-define('DB_HOST', 'lolyz0ok3stvj6f0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	');
+define('DB_HOST', 'lolyz0ok3stvj6f0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com');
 define('DB_USER', 'v60er1qb6pnw3naj');
 define('DB_PASS', 't012buheow0r9ado');
 define('DB_NAME', 'uf8dsukgfxv7p7b9');
