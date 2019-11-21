@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-var_dump($_SERVER[HTTP_HOST]);
-die();
-
 if ($_SERVER[HTTP_HOST] == 'localhost') {
     // constantes com dados de acesso ao MySQL
     define('DB_HOST', 'mysql');
