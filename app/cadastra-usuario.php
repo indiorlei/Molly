@@ -16,7 +16,6 @@ if ($senha != $repetirSenha) {
     $_SESSION['endereco'] = $endereco;
     $_SESSION['cpf'] = $cpf;
     $_SESSION['email'] = $email;
-
     $_SESSION['error_senha'] = true;
     header('Location: /app/novo-usuario.php');
     exit();

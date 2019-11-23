@@ -4,15 +4,20 @@
     </button>
 
     <ul class="navbar-nav ml-auto">
-
+        <?php
+        // <!-- Counter - Alerts -->
+        $pdo = dbConnect();
+        $contador = $pdo->query('select count(*) from pedidos where status = 1 and id_motofretista is null;')->fetchColumn();
+        ?>
         <li class="nav-item dropdown no-arrow mx-1">
             <a class="nav-link dropdown-toggle" href="<?php echo URL; ?>admin/pedidos/novos-pedidos.php" role="button">
                 <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">2</span>
+                <?php if ($contador > 0) : ?>
+                    <span class="badge badge-danger badge-counter"><?php echo $contador; ?></span>
+                <?php endif; ?>
             </a>
         </li>
-        
+
         <div class="topbar-divider d-none d-sm-block"></div>
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
