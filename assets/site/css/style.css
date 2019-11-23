@@ -380,7 +380,7 @@ button:focus,
   background-image: url(../img/banner_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
 }
 
 .banner_part .banner_text {
