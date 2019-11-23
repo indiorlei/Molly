@@ -69,7 +69,7 @@ try {
     $_SESSION['clienteIsLoggedIn'] = true;
     $_SESSION['clienteNome'] = $nome;
     $_SESSION['clienteID'] = $pdo->lastInsertId();
-    header('Location: app/novo-pedido');
+    header('Location: /app/novo-pedido');
     exit();
 } catch (PDOException $e) {
     echo 'Error: ' . $e->getMessage();

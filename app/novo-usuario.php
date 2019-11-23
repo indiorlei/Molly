@@ -87,10 +87,10 @@ include('template/header.php');
                     <label for="">Senha</label>
                     <div class="row">
                       <div class="col-sm-6 mb-3 mb-sm-0">
-                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Password">
+                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
                       </div>
                       <div class="col-sm-6">
-                        <input type="password" class="form-control" id="repetirSenha" name="repetirSenha" placeholder="Repeat Password">
+                        <input type="password" class="form-control" id="repetirSenha" name="repetirSenha" placeholder="Repetir senha">
                       </div>
                     </div>
                   </div>
@@ -102,16 +102,7 @@ include('template/header.php');
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-user btn-block">Criar Conta</button>
-
-                <!-- <hr> -->
-                <!-- <a href="index.php" class="btn btn-google btn-user btn-block">
-                  <i class="fab fa-google fa-fw"></i> Register with Google
-                </a> -->
-                <!-- <a href="index.php" class="btn btn-facebook btn-user btn-block">
-                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                </a> -->
               </form>
-
 
               <hr>
               <div class="text-center">

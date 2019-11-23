@@ -14,9 +14,6 @@ if ($_SERVER[HTTP_HOST] == 'localhost') {
     define('DB_NAME', 'uf8dsukgfxv7p7b9');
 }
 
-
-
-
 // habilita todas as exibições de erros
 ini_set('display_errors', true);
 error_reporting(E_ALL);
@@ -27,23 +24,6 @@ error_reporting(E_ALL);
 //PDO
 function dbConnect()
 {
-
-    // correto
-    // try {
-    //     $db = new PDO("mysql:dbname=database;host=localhost;charset=utf8;", "root", "");
-    // } catch (PDOException $e) {
-    //     throw new PDOException($e);
-    // }
-
-    // errado
-    // try {
-    //     $db = new PDO("mysql:dbname=database;host=localhost;charset=utf8;", "root", "");
-    // } catch (PDOException $e) {
-    //     $e->getMessage();
-    // }
-
-
-
     try {
         $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -51,7 +31,6 @@ function dbConnect()
         return $pdo;
     } catch (PDOException $e) {
         echo 'Error: ' . $e->getMessage();
-
         throw new PDOException($e);
     }
 }

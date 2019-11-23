@@ -92,6 +92,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
           </div>
         </div>
 
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <a href="javascript:void(0);" id="bt-change-password" class="btn btn-outline-primary">Alterar Senha</a>
+          </div>
+          <div class="card-body card-body__password" style="display:none;">
+            <form class="" method="POST" action="actions.php?update=senha" onsubmit="return validaFormPerfilSenha(this);">
+              <input type="hidden" name="id" value="<?php echo (isset($ID) && $ID != null || $ID != "") ? $ID : ''; ?>" />
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <label for="">Nova Senha</label>
+                    <input type="password" class="form-control" id="senha" name="senha" placeholder="">
+                  </div>
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <label for="">Repetir Senha</label>
+                    <input type="password" class="form-control" id="repetirSenha" name="repetirSenha" placeholder="">
+                  </div>
+                </div>
+              </div>
+              <div class="form-buttons d-flex justify-content-end align-items-center">
+                <a class="btn btn-cancel text-danger" href="javascript:void(0);" id="bt-change-password__cancelar">Cancelar</a>
+                <button type="submit" class="btn btn-primary btn-save ">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
     <?php include('../../copyright.php') ?>

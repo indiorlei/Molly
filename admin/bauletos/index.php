@@ -52,16 +52,16 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'upd
                 <input type="text" class="form-control form-control-modelo" id="modelo" name="modelo" placeholder="Modelo" value="<?php echo (isset($modelo) && $modelo != null || $modelo != "") ? $modelo : ''; ?>" autofocus="">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-volume" id="volume" name="volume" placeholder="Volume (L)" value="<?php echo (isset($volume) && $volume != null || $volume != "") ? $volume : ''; ?>">
+                <input type="text" class="form-control form-control-volume" id="volume" name="volume" placeholder="Volume (L) | Digitar somente valor númerico" onkeypress="return somenteNumeros(event)" value="<?php echo (isset($volume) && $volume != null || $volume != "") ? $volume : ''; ?>">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-altura" id="altura" name="altura" placeholder="Altura (cm)" value="<?php echo (isset($altura) && $altura != null || $altura != "") ? $altura : ''; ?>">
+                <input type="text" class="form-control form-control-altura" id="altura" name="altura" placeholder="Altura (cm) | Digitar somente valor númerico" onkeypress="return somenteNumeros(event)" value="<?php echo (isset($altura) && $altura != null || $altura != "") ? $altura : ''; ?>">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-largura" id="largura" name="largura" placeholder="Largura (cm)" value="<?php echo (isset($largura) && $largura != null || $largura != "") ? $largura : ''; ?>">
+                <input type="text" class="form-control form-control-largura" id="largura" name="largura" placeholder="Largura (cm) | Digitar somente valor númerico" onkeypress="return somenteNumeros(event)" value="<?php echo (isset($largura) && $largura != null || $largura != "") ? $largura : ''; ?>">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-profundidade" id="profundidade" name="profundidade" placeholder="Profundidade (cm)" value="<?php echo (isset($profundidade) && $profundidade != null || $profundidade != "") ? $profundidade : ''; ?>">
+                <input type="text" class="form-control form-control-profundidade" id="profundidade" name="profundidade" placeholder="Profundidade (cm) | Digitar somente valor númerico" onkeypress="return somenteNumeros(event)" value="<?php echo (isset($profundidade) && $profundidade != null || $profundidade != "") ? $profundidade : ''; ?>">
               </div>
               <div class="form-buttons d-flex justify-content-end align-items-center">
                 <a class="btn btn-cancel text-danger" href="<?php echo URL; ?>admin/bauletos/listar.php">Cancelar</a>

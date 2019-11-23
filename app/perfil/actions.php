@@ -10,7 +10,6 @@ $sobrenome = isset($_POST['sobrenome']) ? $_POST['sobrenome'] : '';
 $email = isset($_POST['email']) ? $_POST['email'] : '';
 $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : '';
 $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : '';
-$senha = isset($_POST['senha']) ? $_POST['senha'] : '';
 
 try {
   if ($_GET['update'] == 'infoPessoais') {
@@ -29,7 +28,12 @@ try {
       ':endereco' => $endereco
     ));
   } else if ($_GET['update'] == 'senha') {
-
+    $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
+    $statement = $pdo->prepare('update clientes set senha = md5(:senha) where id = :id');
+    $statement->execute(array(
+      ':id' => $ID,
+      ':senha' => $senha
+    ));
   }
   header('Location: /app/perfil');
   exit();

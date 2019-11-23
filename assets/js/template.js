@@ -95,6 +95,17 @@ $(function () {
     }
   });
 
+  // perfil do usuario, alterar a senha
+  $('#bt-change-password').click(function () {
+    $('.card-body__password').show();
+  });
+
+  $('#bt-change-password__cancelar').click(function () {
+    $('.card-body__password').hide();
+  });
+
+  // 
+
 })(jQuery); // End of use strict
 
 function setCookie(name, value) {
@@ -127,6 +138,23 @@ function deleteCookie(name) {
   }
 }
 
+function somenteNumeros(e) {
+  var charCode = e.charCode ? e.charCode : e.keyCode;
+  // charCode 8 = backspace   
+  // charCode 9 = tab
+  if (charCode != 8 && charCode != 9) {
+    // charCode 48 equivale a 0   
+    // charCode 57 equivale a 9
+    if (charCode < 48 || charCode > 57) {
+      return false;
+    }
+  }
+}
+
+function mascaraCpf(valor) {
+  return valor.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, "\$1.\$2.\$3\-\$4");
+}
+
 function validaEmail(email) {
   console.log(email);
   if (
@@ -141,37 +169,9 @@ function validaEmail(email) {
   }
 }
 
-
-
-
-// VALIDAÇÕES FORMS ADMIN
-function validaForm(form) {
-  if (form.enderecoRetirada.value == "" || form.enderecoRetirada.value == null) {
-    alert("Por favor, indique o Endereço de Retirada.");
-    form.enderecoRetirada.focus();
-    return false;
-  }
+function retirarFormatacao(campoTexto) {
+  campoTexto.value = campoTexto.value.replace(/(\.|\/|\-)/g, "");
 }
-
-
-// VALIDAÇÕES FORMS APP
-function validaFormNovoPedido(form) {
-  if (form.enderecoRetirada.value == "" || form.enderecoRetirada.value == null) {
-    alert("Por favor, indique o Endereço de Retirada.");
-    form.enderecoRetirada.focus();
-    form.enderecoRetirada.classList.add('form-error');
-    return false;
-  } else {
-    form.enderecoRetirada.classList.remove('form-error');
-  }
-
-  if (form.enderecoDestino.value == "" || form.enderecoDestino.value == null) {
-    alert("Por favor, indique o Endereço de Destino.");
-    form.enderecoDestino.focus();
-    form.enderecoDestino.classList.add('form-error');
-    return false;
-  } else {
-    form.enderecoDestino.classList.remove('form-error');
-  }
-
+function mascaraCpf(valor) {
+  return valor.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, "\$1.\$2.\$3\-\$4");
 }

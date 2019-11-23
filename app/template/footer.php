@@ -7,6 +7,9 @@
 
   <!-- Custom scripts for all pages-->
   <script src="<?php echo URL ?>assets/js/template.min.js"></script>
+  
+  <!-- validacoes -->
+  <script src="<?php echo URL ?>assets/js/validacoes-app.min.js"></script>
 
   </body>
 
