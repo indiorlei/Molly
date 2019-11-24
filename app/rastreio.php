@@ -2,6 +2,7 @@
 require('../config.php');
 
 $codRastreio = $_POST['codRastreio'];
+$codRastreio = trim($codRastreio);
 
 if (!$codRastreio) {
     echo 'Digite o Código de Rastreio';
@@ -9,7 +10,6 @@ if (!$codRastreio) {
 }
 
 $pdo = dbConnect();
-
 $statement = $pdo->prepare(
     "select
     s.nome as status,
