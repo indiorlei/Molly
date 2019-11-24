@@ -8,7 +8,7 @@ if ($_GET['action'] == 'cancel') {
     $ID = isset($_GET['id']) ? $_GET['id'] : '';
     try {
         // status 2 = 'Cancelado'ı
-        $statement = $pdo->prepare('update pedidos set status = 2 where id = :id');
+        $statement = $pdo->prepare('update pedidos set status = 2, dataModificacao = CURRENT_TIMESTAMP() where id = :id');
         $statement->execute(array(
             ':id' => $ID
         ));
