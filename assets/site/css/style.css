@@ -223,6 +223,12 @@ button:focus,
   width: 250px;
 }
 
+@media (max-width: 410px) {
+  .input {
+    width: 100%;
+  }
+}
+
 .btn_2:hover {
   color: #fff !important;
   border: 1px solid #0ab6ff;
