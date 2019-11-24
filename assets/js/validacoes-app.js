@@ -146,9 +146,11 @@ function validaFormNovoPedido(form) {
 function validaFormPerfilInfo(form) {
   var blocoErro = document.querySelector('.bloco-erro');
   var msgErro = document.querySelector('.msg-erro');
+  var blocoSuccess = document.querySelector('.bloco-success');
 
   if (form.nome.value == "" || form.nome.value == null) {
     blocoErro.style.display = 'block';
+    blocoSuccess.style.display = 'none';
     msgErro.textContent = 'Digite seu Nome';
     form.nome.focus();
     form.nome.classList.add('form-error');
@@ -160,6 +162,7 @@ function validaFormPerfilInfo(form) {
 
   if (form.sobrenome.value == "" || form.sobrenome.value == null) {
     blocoErro.style.display = 'block';
+    blocoSuccess.style.display = 'none';
     msgErro.textContent = 'digite seu Sobrenome';
     form.sobrenome.focus();
     form.sobrenome.classList.add('form-error');
@@ -171,6 +174,7 @@ function validaFormPerfilInfo(form) {
 
   if (form.cpf.value == "" || form.cpf.value == null) {
     blocoErro.style.display = 'block';
+    blocoSuccess.style.display = 'none';
     msgErro.textContent = 'Digite seu CPF';
     form.cpf.focus();
     form.cpf.classList.add('form-error');
@@ -182,6 +186,7 @@ function validaFormPerfilInfo(form) {
 
   if (form.email.value == "" || form.email.value == null) {
     blocoErro.style.display = 'block';
+    blocoSuccess.style.display = 'none';
     msgErro.textContent = 'Digite seu Email';
     form.email.focus();
     form.email.classList.add('form-error');

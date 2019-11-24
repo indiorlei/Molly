@@ -151,8 +151,18 @@ function somenteNumeros(e) {
   }
 }
 
-function mascaraCpf(valor) {
-  return valor.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, "\$1.\$2.\$3\-\$4");
+function mascara(objeto, mascara) {
+  obj = objeto
+  masc = mascara
+  setTimeout("obj.value = masc(obj.value)", 1)
+}
+
+function mascaraCPF(cpf) {
+  cpf = cpf.replace(/\D/g, "")
+  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+  cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+  cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+  return cpf
 }
 
 function validaEmail(email) {

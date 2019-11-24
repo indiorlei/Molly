@@ -96,7 +96,7 @@ include('template/header.php');
                 </div>
                 <div class="form-group">
                   <label for="">CPF *</label>
-                  <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Ex: 000.000.000-00" value="<?php echo $_SESSION['cpf'] ? $_SESSION['cpf'] : ''; ?>">
+                  <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Ex: 000.000.000-00" onkeydown="javascript: mascara(this, mascaraCPF);" maxlength="14" value="<?php echo $_SESSION['cpf'] ? $_SESSION['cpf'] : ''; ?>">
                 </div>
                 <div class="form-group">
                   <label for="">Email *</label>

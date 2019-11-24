@@ -33,17 +33,43 @@ $status = $pdo->query('select * from status;');
                   </thead>
                   <tbody>
                     <?php while ($elem = $status->fetch(PDO::FETCH_OBJ)) { ?>
+                      <?php
+                          // Não pode editar ou excluir os status pré-definidos
+                          $statusPadrao = true;
+                          if (
+                            $elem->id == 1 ||
+                            $elem->id == 2 ||
+                            $elem->id == 3 ||
+                            $elem->id == 4 ||
+                            $elem->id == 5 ||
+                            $elem->id == 6 ||
+                            $elem->id == 7
+                          ) {
+                            $statusPadrao = false;
+                          }
+                          ?>
                       <tr>
+
                         <td>
-                          <a href="index.php?action=update&id=<?php echo $elem->id; ?>">
-                            <i class="fas fa-edit"></i>
-                          </a>
+                          <?php if ($statusPadrao) : ?>
+                            <a href="index.php?action=update&id=<?php echo $elem->id; ?>">
+                              <i class="fas fa-edit"></i>
+                            </a>
+                          <?php else : ?>
+                            <a><i class="fas fa-check"></i></a>
+                          <?php endif; ?>
                         </td>
+
                         <td>
-                          <a href="#" data-toggle="modal" data-target="#deleteModal_<?php echo $elem->id; ?>">
-                            <i class="fas fa-trash"></i>
-                          </a>
+                          <?php if ($statusPadrao) : ?>
+                            <a href="#" data-toggle="modal" data-target="#deleteModal_<?php echo $elem->id; ?>">
+                              <i class="fas fa-trash"></i>
+                            </a>
+                          <?php else : ?>
+                            <a><i class="fas fa-check"></i></a>
+                          <?php endif; ?>
                         </td>
+
                         <td><?php echo $elem->nome ?></td>
                         <td>
                           <?php
@@ -63,7 +89,8 @@ $status = $pdo->query('select * from status;');
                               ?>
                       </tr>
 
-                      <?php // MODAL PARA EXCLUIR ?>
+                      <?php // MODAL PARA EXCLUIR 
+                          ?>
                       <div class="modal fade" id="deleteModal_<?php echo $elem->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
@@ -81,7 +108,8 @@ $status = $pdo->query('select * from status;');
                           </div>
                         </div>
                       </div>
-                      <?php // MODAL PARA EXCLUIR ?>
+                      <?php // MODAL PARA EXCLUIR 
+                          ?>
 
                     <?php } ?>
                   </tbody>

@@ -67,7 +67,7 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'upd
               </div>
               <div class="form-group">
                 <label for="id">CPF</label>
-                <input type="text" class="form-control form-control-cpf" id="cpf" name="cpf" placeholder="000.000.000-00" value="<?php echo (isset($cpf) && $cpf != null || $cpf != "") ? $cpf : ''; ?>">
+                <input type="text" class="form-control form-control-cpf" id="cpf" name="cpf" placeholder="000.000.000-00" onkeydown="javascript: mascara(this, mascaraCPF);" maxlength="14" value="<?php echo (isset($cpf) && $cpf != null || $cpf != "") ? $cpf : ''; ?>">
               </div>
               <div class="form-group">
                 <label for="placa">Placa</label>

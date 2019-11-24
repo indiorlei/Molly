@@ -46,13 +46,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
           </div>
           <div class="card-body">
 
-            <div class="mb-4 bloco-erro" <?php echo (isset($_SESSION['success'])) ? '' : 'style="display:none"'; ?>>
-              <div class="card border-left-<?php echo (isset($_SESSION['success'])) ? 'success' : 'danger'; ?> shadow h-100 py-2">
+          <div class="mb-4 bloco-erro" style="display:none">
+              <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-<?php echo (isset($_SESSION['success'])) ? 'success' : 'danger'; ?> text-uppercase">
-                        <span class="msg-erro">
+                      <div class="text-xs font-weight-bold text-danger text-uppercase">
+                        <span class="msg-erro"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mb-4 bloco-success" <?php echo (isset($_SESSION['success'])) ? '' : 'style="display:none"'; ?>>
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase">
+                        <span class="msg-success">
                           <?php if (isset($_SESSION['success'])) {
                             echo $_SESSION['message_success'];
                           } ?>
@@ -82,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
               </div>
               <div class="form-group">
                 <label for="">CPF</label>
-                <input readonly type="text" class="form-control" id="cpf" name="cpf" value="<?php echo (isset($cpf) && $cpf != null || $cpf != "") ? $cpf : ''; ?>">
+                <input readonly type="text" class="form-control" id="cpf" name="cpf" onkeydown="javascript: mascara(this, mascaraCPF);" maxlength="14" value="<?php echo (isset($cpf) && $cpf != null || $cpf != "") ? $cpf : ''; ?>">
               </div>
               <div class="form-group">
                 <label for="">Email</label>
