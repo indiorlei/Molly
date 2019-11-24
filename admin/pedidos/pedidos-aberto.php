@@ -42,7 +42,8 @@ $naoEncontrado->execute();
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Novos Pedidos</h6>
-                <?php // <!-- (1,'Solicitando Motofretista', 1), --> ?>
+                <?php // <!-- (1,'Solicitando Motofretista', 1), --> 
+                ?>
               </div>
               <div class="card-body">
                 <?php if ($solicitando->rowCount() <= 0) : ?>
@@ -52,7 +53,7 @@ $naoEncontrado->execute();
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th></th>
+                          <th width="30px"></th>
                           <th>Cliente</th>
                           <th>Cod. Rastreio</th>
                         </tr>
@@ -85,7 +86,8 @@ $naoEncontrado->execute();
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Motofretista em trânsito</h6>
-                <?php // <!-- (4,'Motofretista em trânsito', 1), --> ?>
+                <?php // <!-- (4,'Motofretista em trânsito', 1), --> 
+                ?>
               </div>
               <div class="card-body">
                 <?php if ($emTransito->rowCount() <= 0) : ?>
@@ -95,7 +97,7 @@ $naoEncontrado->execute();
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th></th>
+                          <th width="30px"></th>
                           <th>Cliente</th>
                           <th>Cod. Rastreio</th>
                         </tr>
@@ -128,7 +130,8 @@ $naoEncontrado->execute();
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Coleta realizada</h6>
-                <?php // <!-- (5,'Coleta realizada', 1), --> ?>
+                <?php // <!-- (5,'Coleta realizada', 1), --> 
+                ?>
               </div>
               <div class="card-body">
                 <?php if ($coleta->rowCount() <= 0) : ?>
@@ -138,7 +141,7 @@ $naoEncontrado->execute();
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th></th>
+                          <th width="30px"></th>
                           <th>Cliente</th>
                           <th>Cod. Rastreio</th>
                         </tr>
@@ -172,10 +175,11 @@ $naoEncontrado->execute();
 
           <div class="col-lg-6">
 
-          <div class="card shadow mb-4">
+            <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Endereço Não encontrado</h6>
-                <?php // <!-- (7,'Endereço não encontrado', 1) --> ?>
+                <?php // <!-- (7,'Endereço não encontrado', 1) --> 
+                ?>
               </div>
               <div class="card-body">
                 <?php if ($naoEncontrado->rowCount() <= 0) : ?>
@@ -185,7 +189,7 @@ $naoEncontrado->execute();
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th></th>
+                          <th width="30px"></th>
                           <th>Cliente</th>
                           <th>Cod. Rastreio</th>
                         </tr>
@@ -214,11 +218,12 @@ $naoEncontrado->execute();
                 <?php endif; ?>
               </div>
             </div>
-            
+
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Não há Motofretista disponível</h6>
-                <?php // <!-- (3,'Não há Motofretista disponível', 1), --> ?>
+                <?php // <!-- (3,'Não há Motofretista disponível', 1), --> 
+                ?>
               </div>
               <div class="card-body">
                 <?php if ($indisponivel->rowCount() <= 0) : ?>
@@ -228,7 +233,7 @@ $naoEncontrado->execute();
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th></th>
+                          <th width="30px"></th>
                           <th>Cliente</th>
                           <th>Cod. Rastreio</th>
                         </tr>

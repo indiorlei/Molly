@@ -40,7 +40,7 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'upd
             <h6 class="m-0 font-weight-bold text-primary"><?php echo $titlePage; ?></h6>
           </div>
           <div class="card-body">
-            <form class="" method="POST" action="actions.php">
+            <form class="" method="POST" action="actions.php" onsubmit="return validaFormStatus(this);">
               <input type="hidden" name="id" value="<?php echo (isset($ID) && $ID != null || $ID != "") ? $ID : ''; ?>" />
               <div class="form-group">
                 <input type="text" class="form-control" id="status" name="status" placeholder="Status" value="<?php echo (isset($nome) && $nome != null || $nome != "") ? $nome : ''; ?>" autofocus="">

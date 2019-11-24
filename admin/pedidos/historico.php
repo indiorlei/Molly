@@ -26,7 +26,8 @@ $cancelados->execute();
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Entrega concluída</h6>
-                <!-- Entrega concluída status 6 -->
+                <?php // <!-- Entrega concluída status 6 --> 
+                ?>
               </div>
               <div class="card-body">
                 <?php if ($concluidos->rowCount() <= 0) : ?>
@@ -36,7 +37,7 @@ $cancelados->execute();
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th></th>
+                          <th width="30px"></th>
                           <th>Cliente</th>
                           <th>Cod. Rastreio</th>
                         </tr>
@@ -50,11 +51,11 @@ $cancelados->execute();
                               </a>
                             </td>
                             <?php
-                              $cliente = $pdo->prepare("select nome, sobrenome from clientes where id = :id;");
-                              $cliente->execute(array(':id' => $elem->id_cliente));
-                              $cliente = $cliente->fetchAll(PDO::FETCH_OBJ);
-                              $cliente = $cliente[0];
-                              ?>
+                                $cliente = $pdo->prepare("select nome, sobrenome from clientes where id = :id;");
+                                $cliente->execute(array(':id' => $elem->id_cliente));
+                                $cliente = $cliente->fetchAll(PDO::FETCH_OBJ);
+                                $cliente = $cliente[0];
+                                ?>
                             <td><?php echo $cliente->nome . ' ' . $cliente->sobrenome ?></td>
                             <td><?php echo $elem->codRastreio ?></td>
                           </tr>
@@ -71,7 +72,8 @@ $cancelados->execute();
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Cancelado</h6>
-                <!-- Cancelado status 2 -->
+                <?php // <!-- Cancelado status 2 --> 
+                ?>
               </div>
               <div class="card-body">
                 <?php if ($cancelados->rowCount() <= 0) : ?>
@@ -81,7 +83,7 @@ $cancelados->execute();
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th></th>
+                          <th width="30px"></th>
                           <th>Cliente</th>
                           <th>Cod. Rastreio</th>
                         </tr>
@@ -95,11 +97,11 @@ $cancelados->execute();
                               </a>
                             </td>
                             <?php
-                              $cliente = $pdo->prepare("select nome, sobrenome from clientes where id = :id;");
-                              $cliente->execute(array(':id' => $elem->id_cliente));
-                              $cliente = $cliente->fetchAll(PDO::FETCH_OBJ);
-                              $cliente = $cliente[0];
-                              ?>
+                                $cliente = $pdo->prepare("select nome, sobrenome from clientes where id = :id;");
+                                $cliente->execute(array(':id' => $elem->id_cliente));
+                                $cliente = $cliente->fetchAll(PDO::FETCH_OBJ);
+                                $cliente = $cliente[0];
+                                ?>
                             <td><?php echo $cliente->nome . ' ' . $cliente->sobrenome ?></td>
                             <td><?php echo $elem->codRastreio ?></td>
                           </tr>

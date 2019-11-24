@@ -5,7 +5,20 @@ require('../isLoggedIn.php');
 include('../template/header.php');
 
 $pdo = dbConnect();
-$pedidos = $pdo->prepare('select * from pedidos p inner join status s on s.id = p.status where p.id_cliente = :id_cliente and s.tipo = 1 order by datamodificacao desc;');
+$pedidos = $pdo->prepare(
+  "select
+  p.id,
+  p.status,
+  p.codRastreio,
+  p.enderecoRetirada,
+  p.enderecoDestino,
+  p.id_motofretista,
+  p.tipoEntrega
+  from pedidos p
+  inner join status s on s.id = p.status
+  where p.id_cliente = :id_cliente and s.tipo = 1
+  order by datamodificacao desc;"
+);
 $pedidos->execute(array(':id_cliente' => $_SESSION['clienteID']));
 ?>
 
@@ -28,6 +41,7 @@ $pedidos->execute(array(':id_cliente' => $_SESSION['clienteID']));
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
+                      <th width="30px"></th>
                       <th>Status</th>
                       <th>Cod. Rastreio</th>
                       <th>Endereço Retirada</th>
@@ -40,6 +54,13 @@ $pedidos->execute(array(':id_cliente' => $_SESSION['clienteID']));
                   <tbody>
                     <?php while ($elem = $pedidos->fetch(PDO::FETCH_OBJ)) { ?>
                       <tr>
+                        <td>
+                          <?php if (!$elem->id_motofretista && $elem->status == 1) : ?>
+                            <a <a href="#" data-toggle="modal" data-target="#cancelModal_<?php echo $elem->id; ?>" title="Cancelar Pedido">
+                              <i class="fas fa-window-close"></i>
+                            </a>
+                          <?php endif; ?>
+                        </td>
                         <td>
                           <?php
                               $status = $pdo->prepare("select nome from status where id = :id;");
@@ -84,6 +105,29 @@ $pedidos->execute(array(':id_cliente' => $_SESSION['clienteID']));
                               ?>
                         </td>
                       </tr>
+
+                      <?php // MODAL PARA CANCELAR 
+                          ?>
+                      <div class="modal fade" id="cancelModal_<?php echo $elem->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">Deseja realmente Cancelar?</h5>
+                              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">Você realmente gostaria de cancelar o Pedido "<?php echo $elem->codRastreio ?>"?</div>
+                            <div class="modal-footer">
+                              <button class="btn btn-secondary" type="button" data-dismiss="modal">Não</button>
+                              <a class="btn btn-danger" href="actions.php?action=cancel&id=<?php echo $elem->id; ?>">Sim</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <?php // MODAL PARA CANCELAR 
+                          ?>
+
                     <?php } ?>
                   </tbody>
                 </table>

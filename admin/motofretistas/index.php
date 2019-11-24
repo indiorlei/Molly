@@ -45,7 +45,7 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'upd
             <h6 class="m-0 font-weight-bold text-primary"><?php echo $titlePage; ?></h6>
           </div>
           <div class="card-body">
-            <form class="" method="POST" action="actions.php">
+            <form class="" method="POST" action="actions.php" onsubmit="return validaFormMotofretistas(this);">
               <input type="hidden" name="id" value="<?php echo (isset($ID) && $ID != null || $ID != "") ? $ID : ''; ?>" />
               <div class="form-group">
                 <label for="nome">Nome Completo</label>
@@ -53,10 +53,7 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'upd
               </div>
               <div class="form-group">
                 <label for="id">CPF</label>
-                <input type="text" class="form-control form-control-cpf" id="cpf" name="cpf"
-                placeholder="000.000.000-00"
-              
-                value="<?php echo (isset($cpf) && $cpf != null || $cpf != "") ? $cpf : ''; ?>">
+                <input type="text" class="form-control form-control-cpf" id="cpf" name="cpf" placeholder="000.000.000-00" value="<?php echo (isset($cpf) && $cpf != null || $cpf != "") ? $cpf : ''; ?>">
               </div>
               <div class="form-group">
                 <label for="placa">Placa</label>
@@ -69,7 +66,7 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'upd
                   <h6 class="m-0">Nenhum Bauleto cadastrado</h6>
                 <?php else : ?>
                   <select class="form-control" id="bauleto" name="bauleto">
-                    <option>Selecione</option>
+                    <option value="0">Selecione</option>
                     <?php while ($elem = $bauletos->fetch(PDO::FETCH_OBJ)) : ?>
                       <option value="<?php echo $elem->id; ?>" <?php echo ($bauleto == $elem->id) ? 'selected' : ''; ?>>
                         <?php echo $elem->modelo; ?>

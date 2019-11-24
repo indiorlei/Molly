@@ -32,7 +32,7 @@ $pedidos->execute();
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th></th>
+                          <th width="30px"></th>
                           <th>Cliente</th>
                           <th>Cod. Rastreio</th>
                         </tr>

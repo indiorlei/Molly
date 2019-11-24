@@ -33,6 +33,7 @@ function validaFormPerfilSenha(form) {
   } else {
     form.senha.classList.remove('form-error');
   }
+
   if (form.repetirSenha.value == "" || form.repetirSenha.value == null) {
     alert("Por favor, repita a senha");
     form.repetirSenha.focus();
@@ -41,6 +42,7 @@ function validaFormPerfilSenha(form) {
   } else {
     form.repetirSenha.classList.remove('form-error');
   }
+
   if (form.senha.value != form.repetirSenha.value) {
     alert("as senhas nao coincidem, digite novamente");
     form.repetirSenha.focus();
@@ -49,7 +51,5 @@ function validaFormPerfilSenha(form) {
   } else {
     form.repetirSenha.classList.remove('form-error');
   }
-
-
 
 }

@@ -60,8 +60,7 @@ $motofretistas = $pdo->query('select * from motofretistas;');
                           <?php echo $bauleto->modelo; ?>
                         </td>
                       </tr>
-                      <?php // MODAL PARA EXCLUIR 
-                          ?>
+                      <?php // MODAL PARA EXCLUIR ?>
                       <div class="modal fade" id="deleteModal_<?php echo $elem->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
@@ -79,8 +78,7 @@ $motofretistas = $pdo->query('select * from motofretistas;');
                           </div>
                         </div>
                       </div>
-                      <?php // MODAL PARA EXCLUIR 
-                          ?>
+                      <?php // MODAL PARA EXCLUIR ?>
                     <?php } ?>
                   </tbody>
                 </table>
