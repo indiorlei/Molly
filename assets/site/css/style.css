@@ -701,3 +701,13 @@ h5,
 h6 {
   line-height: 1.2em;
 }
+
+/* rastreio */
+#resposta {
+  margin-top: 25px;
+}
+
+#loading {
+  display: none;
+  margin-top: 25px;
+}

@@ -14,17 +14,34 @@ include('template/header.php');
                 <h1 class="h4 text-gray-900 mb-4">Crie a sua conta aqui!</h1>
               </div>
 
-              <form class="user" method="POST" action="cadastra-usuario.php">
+              <form class="user" method="POST" action="cadastra-usuario.php" onsubmit="return validaFormCadastro(this);">
+
+
+                <div class="mb-4 bloco-erro" style="display:none">
+                  <div class="card border-left-danger shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-danger text-uppercase">
+                            <span class="msg-erro"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <?php if (isset($_SESSION['error_email'])) : ?>
-                  <div class="form-group">
-                    <div class="px-1 py-2 bg-gradient-danger text-white">
-                      <span class="icon text-white-50">
-                        <i class="fas fa-exclamation-circle"></i>
-                      </span>
-                      <span class="text">Email já cadastrado</span>
-                      <div class="text-center">
-                        <a class="small" href="<?php echo URL ?>app/forgot-password.php">Esqueceu a senha?</a>
+                  <div class="mb-4">
+                    <div class="card border-left-danger shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase">
+                              Email já cadastrado
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -32,14 +49,16 @@ include('template/header.php');
                 unset($_SESSION['error_email']); ?>
 
                 <?php if (isset($_SESSION['error_cpf'])) : ?>
-                  <div class="form-group">
-                    <div class="px-1 py-2 bg-gradient-danger text-white">
-                      <span class="icon text-white-50">
-                        <i class="fas fa-exclamation-circle"></i>
-                      </span>
-                      <span class="text">CPF já cadastrado</span>
-                      <div class="text-center">
-                        <a class="small" href="<?php echo URL ?>app/forgot-password.php">Esqueceu a senha?</a>
+                  <div class="mb-4">
+                    <div class="card border-left-danger shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase">
+                              CPF já cadastrado
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -47,12 +66,17 @@ include('template/header.php');
                 unset($_SESSION['error_cpf']); ?>
 
                 <?php if (isset($_SESSION['error_senha'])) : ?>
-                  <div class="form-group">
-                    <div class="px-1 py-2 bg-gradient-danger text-white">
-                      <span class="icon text-white-50">
-                        <i class="fas fa-exclamation-circle"></i>
-                      </span>
-                      <span class="text">senhas não conferem</span>
+                  <div class="mb-4">
+                    <div class="card border-left-danger shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase">
+                              senhas não conferem
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 <?php endif;
@@ -61,26 +85,26 @@ include('template/header.php');
                 <div class="form-group">
                   <div class="row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <label for="">Nome</label>
+                      <label for="">Nome *</label>
                       <input autofocus="" type="text" class="form-control" id="nome" name="nome" placeholder="Ex: José Augusto" value="<?php echo $_SESSION['nome'] ? $_SESSION['nome'] : ''; ?>">
                     </div>
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <label for="">Sobrenome</label>
+                      <label for="">Sobrenome *</label>
                       <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Ex: da Silva" value="<?php echo $_SESSION['sobrenome'] ? $_SESSION['sobrenome'] : ''; ?>">
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="">CPF</label>
+                  <label for="">CPF *</label>
                   <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Ex: 000.000.000-00" value="<?php echo $_SESSION['cpf'] ? $_SESSION['cpf'] : ''; ?>">
                 </div>
                 <div class="form-group">
-                  <label for="">Email</label>
+                  <label for="">Email *</label>
                   <input type="email" class="form-control" id="email" name="email" placeholder="Este será seu login" value="<?php echo $_SESSION['email'] ? $_SESSION['email'] : ''; ?>">
                 </div>
                 <div class="form-group">
                   <div class="form-group">
-                    <label for="">Senha</label>
+                    <label for="">Senha *</label>
                     <div class="row">
                       <div class="col-sm-6 mb-3 mb-sm-0">
                         <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
@@ -100,9 +124,6 @@ include('template/header.php');
               </form>
 
               <hr>
-              <!-- <div class="text-center">
-                <a class="small" href="esqueceu-senha.php">Esqueceu a senha?</a>
-              </div> -->
               <div class="text-center">
                 <a class="small" href="<?php echo URL ?>app/login.php">já tem uma conta? Faça Login aqui!</a>
               </div>

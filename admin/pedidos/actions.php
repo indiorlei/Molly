@@ -14,6 +14,9 @@ if ($_GET['update'] == 'status') {
       ':id' => $ID,
       ':status' => $status,
     ));
+    
+    $_SESSION['success'] = true;
+    $_SESSION['message_success'] = 'Status alterado com sucesso!';
     header('Location: /admin/pedidos/index.php?pedido=' . $ID);
     exit();
   } catch (PDOException $e) {
@@ -27,6 +30,9 @@ if ($_GET['update'] == 'status') {
       ':id' => $ID,
       ':motofretista' => $motofretista,
     ));
+    
+    $_SESSION['success'] = true;
+    $_SESSION['message_success'] = 'Motofretista alterado com sucesso!';
     header('Location: /admin/pedidos/index.php?pedido=' . $ID);
     exit();
   } catch (PDOException $e) {

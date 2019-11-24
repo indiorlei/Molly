@@ -88,10 +88,14 @@
                     <div class="about_us_text">
                         <h2>Buscar pelo código de rastreio</h2>
                         <p>Digite o código de rastreio para acompanhar o seu pedido.</p>
-                        <form action="">
-                            <input class="input" type="text" placeholder="Digite o Código de rastreio">
+
+                        <form method="post" ajax="true" action="app/rastreio.php">
+                            <input class="input" type="text" name="codRastreio" placeholder="Digite o Código de rastreio">
                             <button type="submit" class="btn_1">Buscar</button>
                         </form>
+
+                        <p id="loading">Solicitando ...</p>
+                        <p id="resposta"></p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6">
@@ -106,8 +110,28 @@
     </section>
 </body>
 
+<script src="assets/vendor/jquery/jquery.min.js"></script>
 <script>
-    console.log('scriptzando...');
+    $(document).ready(function(e) {
+        $("form[ajax=true]").submit(function(e) {
+            e.preventDefault();
+            var form_data = $(this).serialize();
+            var form_url = $(this).attr("action");
+            var form_method = $(this).attr("method").toUpperCase();
+
+            // $("#loading").show();
+            $.ajax({
+                url: form_url,
+                type: form_method,
+                data: form_data,
+                cache: false,
+                success: function(returnhtml) {
+                    $("#resposta").html(returnhtml);
+                    // $("#loading").hide();
+                }
+            });
+        });
+    });
 </script>
 
 </html>

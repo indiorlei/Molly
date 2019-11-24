@@ -45,7 +45,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <h6 class="m-0 font-weight-bold text-primary">Informações pessoais</h6>
           </div>
           <div class="card-body">
-            <form class="" method="POST" action="actions.php?update=infoPessoais">
+
+            <div class="mb-4 bloco-erro" <?php echo (isset($_SESSION['success'])) ? '' : 'style="display:none"'; ?>>
+              <div class="card border-left-<?php echo (isset($_SESSION['success'])) ? 'success' : 'danger'; ?> shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-<?php echo (isset($_SESSION['success'])) ? 'success' : 'danger'; ?> text-uppercase">
+                        <span class="msg-erro">
+                          <?php if (isset($_SESSION['success'])) {
+                            echo $_SESSION['message_success'];
+                          } ?>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php unset($_SESSION['success']);
+            unset($_SESSION['message_success']); ?>
+
+            <form class="" method="POST" action="actions.php?update=infoPessoais" onsubmit="return validaFormPerfilInfo(this);">
               <input type="hidden" name="id" value="<?php echo (isset($ID) && $ID != null || $ID != "") ? $ID : ''; ?>" />
               <div class="form-group">
                 <div class="row">
@@ -97,6 +118,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <a href="javascript:void(0);" id="bt-change-password" class="btn btn-outline-primary">Alterar Senha</a>
           </div>
           <div class="card-body card-body__password" style="display:none;">
+
+            <div class="mb-4 bloco-erro__senha" style="display:none">
+              <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-danger text-uppercase">
+                        <span class="msg-erro__senha"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <form class="" method="POST" action="actions.php?update=senha" onsubmit="return validaFormPerfilSenha(this);">
               <input type="hidden" name="id" value="<?php echo (isset($ID) && $ID != null || $ID != "") ? $ID : ''; ?>" />
               <div class="form-group">

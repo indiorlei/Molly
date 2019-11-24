@@ -15,19 +15,27 @@ include('template/header.php')
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Login</h1>
                   </div>
-                  <form class="user" method="POST" action="testa-login.php">
 
-                    <?php if (isset($_SESSION['error_login'])) : ?>
-                      <div class="form-group">
-                        <div class="px-1 py-2 bg-gradient-danger text-white">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-exclamation-circle"></i>
-                          </span>
-                          <span class="text">Usuário e/ou senha inválidos</span>
+                  <form class="user" method="POST" action="testa-login.php" onsubmit="return validaFormLoginAdmin(this);">
+
+                    <div class="mb-4 bloco-erro" <?php echo (isset($_SESSION['error_login'])) ? '' : 'style="display:none"'; ?>>
+                      <div class="card border-left-danger shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-danger text-uppercase">
+                                <span class="msg-erro">
+                                  <?php if (isset($_SESSION['error_login'])) {
+                                    echo 'Usuário e/ou senha inválidos';
+                                  } ?>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    <?php endif;
-                    unset($_SESSION['error_login']); ?>
+                    </div>
+                    <?php unset($_SESSION['error_login']); ?>
 
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" id="adminLoginUsuario" name="adminLoginUsuario" aria-describedby="emailHelp" placeholder="Usuário" autofocus="">
@@ -37,6 +45,7 @@ include('template/header.php')
                     </div>
                     <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                   </form>
+
                 </div>
               </div>
             </div>

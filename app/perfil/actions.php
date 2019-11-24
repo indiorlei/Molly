@@ -35,6 +35,9 @@ try {
       ':senha' => $senha
     ));
   }
+
+  $_SESSION['success'] = true;
+  $_SESSION['message_success'] = 'Perfil alterado com sucesso!';
   header('Location: /app/perfil');
   exit();
 } catch (PDOException $e) {

@@ -41,6 +41,21 @@ if (isset($_GET['action']) && $_GET['action'] != null && $_GET['action'] == 'upd
     <div id="content">
       <?php include_once('../menu/topbar.php') ?>
       <div class="container-fluid">
+
+        <div class="mb-4 bloco-erro" style="display:none">
+          <div class="card border-left-danger shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-danger text-uppercase">
+                    <span class="msg-erro"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="card shadow mb-4">
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary"><?php echo $titlePage; ?></h6>
