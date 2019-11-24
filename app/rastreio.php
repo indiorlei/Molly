@@ -1,10 +1,14 @@
 <?php
 require('../config.php');
-require('isLoggedIn.php');
-
-$pdo = dbConnect();
 
 $codRastreio = $_POST['codRastreio'];
+
+if (!$codRastreio) {
+    echo 'Digite o Código de Rastreio';
+    return false;
+}
+
+$pdo = dbConnect();
 
 $statement = $pdo->prepare(
     "select
@@ -17,6 +21,7 @@ $statement = $pdo->prepare(
 
     where p.codRastreio = :codRastreio order by datamodificacao desc;"
 );
+
 $statement->execute(array(':codRastreio' => $codRastreio));
 $statusRastreio = $statement->fetchAll(PDO::FETCH_OBJ);
 
