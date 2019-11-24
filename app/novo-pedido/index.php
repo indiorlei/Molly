@@ -39,11 +39,11 @@ $pdo = dbConnect();
             <div class="card-body">
               <div class="form-group">
                 <label for="">Endereço de Retirada</label>
-                <input type="text" class="form-control" id="enderecoRetirada" name="enderecoRetirada" placeholder="Ex: Av Paulista, 900" autofocus>
+                <input type="text" class="form-control" id="enderecoRetirada" name="enderecoRetirada" placeholder="Ex: Av Paulista, 900 - Bairro - Cidade" autofocus>
               </div>
               <div class="form-group">
                 <label for="">Endereço de Destino</label>
-                <input type="text" class="form-control" id="enderecoDestino" name="enderecoDestino" placeholder="Ex: Av Paulista, 900">
+                <input type="text" class="form-control" id="enderecoDestino" name="enderecoDestino" placeholder="Ex: Av Paulista, 900 - Bairro - Cidade">
               </div>
               <div class="form-group">
                 <label for="">O que o Motofretista deve fazer?</label>
